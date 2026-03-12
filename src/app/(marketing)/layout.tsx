@@ -1,5 +1,5 @@
-// Marketing pages layout — shared header/footer
-// TODO: Build out Header and Footer components with your design
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 export default function MarketingLayout({
   children,
@@ -8,9 +8,9 @@ export default function MarketingLayout({
 }) {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

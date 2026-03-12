@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import PricingCards from "@/components/sections/PricingCards";
+import PricingComparison from "@/components/sections/PricingComparison";
 
 export const metadata: Metadata = buildMetadata({
   title: "Pricing — Plans for Every Business Size",
@@ -38,10 +40,8 @@ export default function PricingPage() {
         ]}
       />
       <FaqJsonLd faqs={pricingFaqs} />
-      <article>
-        <h1>Pricing</h1>
-        {/* TODO: Render pricing cards from CMS */}
-      </article>
+      <PricingCards />
+      <PricingComparison />
     </>
   );
 }
