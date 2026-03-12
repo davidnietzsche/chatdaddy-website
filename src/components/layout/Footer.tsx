@@ -56,66 +56,20 @@ const legalLinks = [
 ];
 
 /* ------------------------------------------------------------------ */
-/*  Social Icons (circle style, ~32px)                                 */
+/*  Social Icons                                                       */
 /* ------------------------------------------------------------------ */
 
-function FacebookIcon() {
+function SocialIcon({ children, href, label }: { children: React.ReactNode; href: string; label: string }) {
   return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.1" />
-      <path
-        d="M17.5 13h2l-.5 2h-1.5v6h-2v-6h-2v-2h2v-1.654C15.5 9.818 16.318 9 17.826 9H19.5v2h-1.174c-.51 0-.826.316-.826.826V13z"
-        fill="white"
-      />
-    </svg>
-  );
-}
-
-function InstagramIcon() {
-  return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.1" />
-      <path
-        d="M16 11.5c-2.485 0-4.5 2.015-4.5 4.5s2.015 4.5 4.5 4.5 4.5-2.015 4.5-4.5-2.015-4.5-4.5-4.5zm0 7.425a2.928 2.928 0 01-2.925-2.925A2.928 2.928 0 0116 13.075 2.928 2.928 0 0118.925 16 2.928 2.928 0 0116 18.925zm5.738-7.613a1.05 1.05 0 11-2.1 0 1.05 1.05 0 012.1 0zM23.4 16c0-1.02.009-2.031-.048-3.048-.057-1.182-.326-2.23-1.188-3.092-.864-.864-1.91-1.131-3.092-1.188C18.054 8.615 17.043 8.625 16.023 8.625s-2.031-.009-3.048.048c-1.182.057-2.23.326-3.092 1.188-.864.864-1.131 1.91-1.188 3.092-.057 1.018-.048 2.029-.048 3.048s-.009 2.031.048 3.048c.057 1.182.326 2.23 1.188 3.092.864.864 1.91 1.131 3.092 1.188 1.018.057 2.029.048 3.048.048s2.031.009 3.048-.048c1.182-.057 2.23-.326 3.092-1.188.864-.864 1.131-1.91 1.188-3.092.059-1.018.048-2.029.048-3.048zm-1.875 4.612c-.144.363-.326.624-.613.911-.287.287-.548.469-.911.613-.938.372-3.164.288-4.2.288s-3.264.082-4.2-.29a2.562 2.562 0 01-.911-.612 2.562 2.562 0 01-.613-.911c-.37-.938-.288-3.164-.288-4.2s-.08-3.264.29-4.2c.144-.363.326-.624.612-.911.287-.287.548-.469.911-.613.938-.372 3.164-.288 4.2-.288s3.264-.082 4.2.29c.363.144.624.326.911.612.287.287.469.548.613.911.372.938.288 3.164.288 4.2s.082 3.264-.288 4.2z"
-        fill="white"
-      />
-    </svg>
-  );
-}
-
-function TikTokIcon() {
-  return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.1" />
-      <path
-        d="M19.32 9.5c.07 1.15.48 2.32 1.32 3.14.84.83 2.02 1.22 3.18 1.34v3.03c-1.08-.04-2.17-.26-3.15-.73-.43-.2-.82-.44-1.22-.7v6.56c-.06 1.05-.4 2.1-1.01 2.96-.98 1.44-2.69 2.38-4.43 2.41-1.08.06-2.15-.23-3.06-.77-1.52-.89-2.58-2.53-2.74-4.29-.02-.37-.02-.75 0-1.12.13-1.43.84-2.79 1.94-3.72 1.24-1.08 2.99-1.6 4.61-1.29v3.33c-.74-.24-1.61-.17-2.27.28-.47.31-.83.78-1.02 1.31-.16.38-.11.8-.1 1.21.18 1.23 1.37 2.27 2.63 2.16.84-.01 1.64-.5 2.08-1.21.14-.25.3-.5.31-.79.07-1.34.04-2.68.05-4.02V9.5h2.88z"
-        fill="white"
-      />
-    </svg>
-  );
-}
-
-function YouTubeIcon() {
-  return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.1" />
-      <path
-        d="M23.76 11.89a2.26 2.26 0 00-1.59-1.6C20.88 10 16 10 16 10s-4.88 0-6.17.29a2.26 2.26 0 00-1.59 1.6C8 13.17 8 16 8 16s0 2.83.24 4.11a2.26 2.26 0 001.59 1.6C11.12 22 16 22 16 22s4.88 0 6.17-.29a2.26 2.26 0 001.59-1.6C24 18.83 24 16 24 16s0-2.83-.24-4.11zM14.4 18.6v-5.2L18.96 16l-4.56 2.6z"
-        fill="white"
-      />
-    </svg>
-  );
-}
-
-function XiaohongshuIcon() {
-  return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.1" />
-      <path
-        d="M10.5 11h3.25l1.5 5.5h.1L16.85 11h3.25l-3.5 10h-2.6l-3.5-10zm8 0H22v1.5h-2v7h2V21h-5.5v-1.5h2v-7h-2V11z"
-        fill="white"
-      />
-    </svg>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex h-9 w-9 items-center justify-center rounded-full bg-white/[0.08] text-white/60 transition-all hover:bg-white/[0.15] hover:text-white"
+      aria-label={label}
+    >
+      {children}
+    </a>
   );
 }
 
@@ -132,7 +86,9 @@ function FooterLinkColumn({
 }) {
   return (
     <div>
-      <h3 className="text-sm font-semibold text-white mb-5">{title}</h3>
+      <h3 className="text-[13px] font-semibold uppercase tracking-wider text-white/90 mb-5">
+        {title}
+      </h3>
       <ul className="space-y-3">
         {links.map((link) => (
           <li key={link.href + link.label}>
@@ -141,19 +97,18 @@ function FooterLinkColumn({
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[13px] text-[#9ca3af] hover:text-white transition-colors inline-flex items-center gap-1.5"
+                className="text-[14px] text-white/50 hover:text-white transition-colors"
               >
                 {link.label}
-                <span className="text-xs">&#8599;</span>
               </a>
             ) : (
               <Link
                 href={link.href}
-                className="text-[13px] text-[#9ca3af] hover:text-white transition-colors inline-flex items-center gap-1.5"
+                className="inline-flex items-center gap-2 text-[14px] text-white/50 hover:text-white transition-colors"
               >
                 {link.label}
                 {link.badge && (
-                  <span className="inline-flex items-center rounded-full bg-orange-500/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-orange-500 ring-1 ring-inset ring-orange-500/20">
+                  <span className="inline-flex items-center rounded-full bg-orange-500/15 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-orange-400">
                     {link.badge}
                   </span>
                 )}
@@ -172,26 +127,26 @@ function FooterLinkColumn({
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0d0f1a] text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="bg-[#111318]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         {/* Top section: logo + columns */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
           {/* Left: Logo */}
           <div className="shrink-0">
-            <Link href="/" className="inline-flex items-center gap-2">
+            <Link href="/" className="inline-flex items-center gap-2.5">
               <Image
                 src="/images/chatdaddy-icon.png"
                 alt="ChatDaddy"
-                width={28}
-                height={28}
+                width={24}
+                height={24}
                 className="shrink-0 brightness-0 invert"
               />
-              <span className="text-lg font-bold text-white">ChatDaddy</span>
+              <span className="text-[17px] font-bold text-white">ChatDaddy</span>
             </Link>
           </div>
 
           {/* Right: Link columns */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 flex-1">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-14 flex-1">
             <FooterLinkColumn title="Features" links={featuresLinks} />
             <FooterLinkColumn title="Company" links={companyLinks} />
             <FooterLinkColumn title="Resources" links={resourcesLinks} />
@@ -200,59 +155,41 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 border-t border-[#1f2937] pt-8">
+        <div className="mt-16 border-t border-white/[0.08] pt-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-500">
+            <p className="text-[13px] text-white/30">
               2026 Copyright &copy; TNT The Next Tech Ltd. All rights reserved.
             </p>
 
             {/* Social icons */}
-            <div className="flex items-center gap-3">
-              <a
-                href="https://www.facebook.com/chatdaddytech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-                aria-label="Facebook"
-              >
-                <FacebookIcon />
-              </a>
-              <a
-                href="https://www.instagram.com/chatdaddy.tech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-                aria-label="Instagram"
-              >
-                <InstagramIcon />
-              </a>
-              <a
-                href="https://www.tiktok.com/@chatdaddy.tech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-                aria-label="TikTok"
-              >
-                <TikTokIcon />
-              </a>
-              <a
-                href="https://www.youtube.com/@chatdaddy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-                aria-label="YouTube"
-              >
-                <YouTubeIcon />
-              </a>
-              <a
-                href="https://www.xiaohongshu.com/user/profile/chatdaddy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity"
-                aria-label="Xiaohongshu"
-              >
-                <XiaohongshuIcon />
-              </a>
+            <div className="flex items-center gap-2.5">
+              <SocialIcon href="https://www.facebook.com/chatdaddytech" label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                </svg>
+              </SocialIcon>
+              <SocialIcon href="https://www.instagram.com/chatdaddy.tech" label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </SocialIcon>
+              <SocialIcon href="https://www.tiktok.com/@chatdaddy.tech" label="TikTok">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86-4.43V7.56a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-.79.01h-.4z" />
+                </svg>
+              </SocialIcon>
+              <SocialIcon href="https://www.youtube.com/@chatdaddy" label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </SocialIcon>
+              <SocialIcon href="https://www.xiaohongshu.com/user/profile/chatdaddy" label="Xiaohongshu">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M10.5 7h3.25l1.5 5.5h.1L16.85 7h3.25l-3.5 10h-2.6l-3.5-10zm8 0H22v1.5h-2v7h2V17h-5.5v-1.5h2v-7h-2V7z" />
+                </svg>
+              </SocialIcon>
             </div>
           </div>
         </div>

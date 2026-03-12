@@ -80,7 +80,6 @@ export default function TestimonialsSection() {
   const scroll = useCallback((direction: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    // Scroll by one card width + gap
     const cardWidth = el.querySelector<HTMLElement>(":scope > div")?.offsetWidth ?? 400;
     el.scrollBy({
       left: direction === "left" ? -cardWidth - 24 : cardWidth + 24,
@@ -89,26 +88,25 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-[#fafafa] py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mx-auto max-w-[700px] text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-[#e5e5e8] bg-white px-4 py-1.5 text-sm font-medium text-[#191a1c]">
-            <Image
-              src="/images/testimonial-icon.png"
-              alt=""
-              width={16}
-              height={16}
-              className="h-4 w-4"
-            />
+        <div className="mx-auto max-w-[680px] text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#e5e5e8] bg-white px-5 py-2 text-sm font-medium text-[#191a1c] shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M8 0L9.79 6.21L16 8L9.79 9.79L8 16L6.21 9.79L0 8L6.21 6.21L8 0Z"
+                fill="#0f5bff"
+              />
+            </svg>
             Testimonial
           </span>
 
-          <h2 className="mt-6 font-heading text-4xl font-bold text-[#191a1c] sm:text-[48px] sm:leading-[1.15]">
+          <h2 className="mt-7 font-heading text-[36px] font-bold leading-[1.12] tracking-[-0.02em] text-[#191a1c] sm:text-[48px]">
             Trusted by businesses
           </h2>
 
-          <p className="mt-4 text-lg leading-relaxed text-[#667085]">
+          <p className="mt-5 text-[17px] leading-[1.6] text-[#667085]">
             Real results&mdash;from startups to enterprises&mdash;showing that smarter
             automation not only pays for itself but drives lasting growth.
           </p>
@@ -125,16 +123,16 @@ export default function TestimonialsSection() {
                 key={t.name}
                 className="w-[85%] flex-shrink-0 snap-start sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
               >
-                <div className="flex h-full min-h-[300px] flex-col rounded-2xl border border-[#e5e5e8] bg-white p-8">
+                <div className="flex h-full flex-col rounded-2xl border border-[#e5e5e8] bg-white p-8 shadow-[0_1px_3px_rgba(0,0,0,0.03)] transition-shadow hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)]">
                   {/* Company logo */}
-                  <div className="mb-6 h-10 flex items-center">
+                  <div className="mb-8 flex h-10 items-center">
                     {t.logo ? (
                       <Image
                         src={t.logo}
                         alt={t.logoAlt}
-                        width={120}
-                        height={40}
-                        className="h-8 w-auto object-contain object-left"
+                        width={140}
+                        height={48}
+                        className="h-9 w-auto object-contain object-left"
                       />
                     ) : (
                       <span className="text-lg font-bold text-[#191a1c]">
@@ -146,27 +144,25 @@ export default function TestimonialsSection() {
                   {/* Quote */}
                   <blockquote className="flex-1">
                     <p
-                      className="text-[15px] leading-[1.6] text-[#191a1c] [&_strong]:font-bold"
-                      dangerouslySetInnerHTML={{
-                        __html: `\u201C${t.quote}\u201D`,
-                      }}
+                      className="text-[15px] leading-[1.7] text-[#191a1c] [&_strong]:font-bold"
+                      dangerouslySetInnerHTML={{ __html: t.quote }}
                     />
                   </blockquote>
 
                   {/* Author */}
-                  <div className="mt-6 flex items-center gap-3">
+                  <div className="mt-8 flex items-center gap-3">
                     <Image
                       src={t.avatar}
                       alt={t.name}
                       width={48}
                       height={48}
-                      className="h-12 w-12 rounded-full object-cover"
+                      className="h-12 w-12 rounded-full object-cover ring-2 ring-gray-100"
                     />
                     <div>
-                      <p className="text-sm font-bold text-[#191a1c]">
+                      <p className="text-[14px] font-bold text-[#191a1c]">
                         {t.name}
                       </p>
-                      <p className="text-sm text-[#667085]">{t.company}</p>
+                      <p className="text-[13px] text-[#667085]">{t.company}</p>
                     </div>
                   </div>
                 </div>
@@ -179,20 +175,10 @@ export default function TestimonialsSection() {
             <button
               onClick={() => scroll("left")}
               aria-label="Previous testimonial"
-              className="absolute -left-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[#0f5bff] text-white shadow-lg transition hover:bg-[#0d4fd9]"
+              className="absolute -left-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#e5e5e8] bg-white text-[#191a1c] shadow-lg transition-all hover:bg-gray-50"
             >
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2.5}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 19l-7-7 7-7"
-                />
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
           )}
@@ -200,36 +186,20 @@ export default function TestimonialsSection() {
           <button
             onClick={() => scroll("right")}
             aria-label="Next testimonial"
-            className={`absolute -right-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[#0f5bff] text-white shadow-lg transition hover:bg-[#0d4fd9] ${
+            className={`absolute -right-3 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#0f5bff] bg-[#0f5bff] text-white shadow-lg transition-all hover:bg-[#0d4fd9] ${
               !canScrollRight ? "opacity-0 pointer-events-none" : ""
             }`}
           >
-            <svg
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>
       </div>
 
-      {/* Hide scrollbar across browsers */}
       <style jsx global>{`
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
     </section>
   );
