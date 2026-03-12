@@ -3,39 +3,39 @@ import Link from "next/link";
 /* Simple line icons matching Framer's style */
 function GrowthIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M23 21v-2a4 4 0 00-3-3.87" />
-      <path d="M16 3.13a4 4 0 010 7.75" />
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="white" strokeWidth="2" />
+      <circle cx="9" cy="7" r="4" stroke="white" strokeWidth="2" />
+      <path d="M23 21v-2a4 4 0 00-3-3.87" stroke="white" strokeWidth="2" />
+      <path d="M16 3.13a4 4 0 010 7.75" stroke="white" strokeWidth="2" />
     </svg>
   );
 }
 
 function PlatformIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-      <line x1="8" y1="21" x2="16" y2="21" />
-      <line x1="12" y1="17" x2="12" y2="21" />
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="white" strokeWidth="2" />
+      <line x1="8" y1="21" x2="16" y2="21" stroke="white" strokeWidth="2" />
+      <line x1="12" y1="17" x2="12" y2="21" stroke="white" strokeWidth="2" />
     </svg>
   );
 }
 
 function ScalableIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="white" strokeWidth="2" />
     </svg>
   );
 }
 
 function AutomationIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 2L2 7l10 5 10-5-10-5z" />
-      <path d="M2 17l10 5 10-5" />
-      <path d="M2 12l10 5 10-5" />
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="white" strokeWidth="2" />
+      <path d="M2 17l10 5 10-5" stroke="white" strokeWidth="2" />
+      <path d="M2 12l10 5 10-5" stroke="white" strokeWidth="2" />
     </svg>
   );
 }
