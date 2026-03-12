@@ -2,30 +2,40 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
 const featuresItems = [
-  { label: "Team Inbox", href: "/features/team-inbox" },
-  { label: "Notification", href: "/features/notification" },
-  { label: "Chatbot", href: "/features/chatbot" },
-  { label: "Marketing", href: "/features/marketing" },
-  { label: "Shop", href: "/features/shop" },
-  { label: "Pay", href: "/features/pay" },
-  { label: "Automation", href: "/features/automation" },
-  { label: "CRM", href: "/features/crm" },
+  { label: "Team Inbox", href: "/features/team-inbox", icon: "/images/feature-icon-1.png" },
+  { label: "Notification", href: "/features/notification", icon: "/images/feature-icon-2.png" },
+  { label: "Chatbot", href: "/features/chatbot", icon: "/images/feature-icon-3.png" },
+  { label: "Marketing", href: "/features/marketing", icon: "/images/feature-icon-4.png" },
+  { label: "Shop", href: "/features/shop", icon: "/images/feature-icon-5.png" },
+  { label: "Pay", href: "/features/pay", icon: "/images/feature-icon-6.png" },
+  { label: "Automation", href: "/features/automation", icon: "/images/feature-icon-7.png" },
+  { label: "CRM", href: "/features/crm", icon: "/images/feature-icon-8.png" },
 ];
 
-const resourcesItems: { label: string; href: string; external?: boolean }[] = [
+const resourcesItems: {
+  label: string;
+  href: string;
+  external?: boolean;
+  badge?: string;
+}[] = [
   { label: "Success Stories", href: "/success-studies" },
   { label: "Blog Posts", href: "/blog" },
-  { label: "Co-Existence", href: "/whatsapp-coexistence" },
+  { label: "Co-Existence", href: "/whatsapp-coexistence", badge: "IMPORTANT" },
   { label: "WhatsApp Link Generator", href: "/resources/whatsapp-link-generator" },
   { label: "ROI Calculator", href: "/resources/roi-calculator" },
   { label: "Help Center", href: "https://help.chatdaddy.tech/", external: true },
-  { label: "API Doc", href: "https://chatdaddy.stoplight.io/docs/openapi/repos/chatdaddy-service-auth/openapi.yaml", external: true },
+  {
+    label: "API Doc",
+    href: "https://chatdaddy.stoplight.io/docs/openapi/repos/chatdaddy-service-auth/openapi.yaml",
+    external: true,
+  },
   { label: "Service Status", href: "https://status.chatdaddy.tech/", external: true },
 ];
 
@@ -50,18 +60,6 @@ function ChevronDownIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
-function ArrowRightIcon() {
-  return (
-    <svg className="w-4 h-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-      <path
-        fillRule="evenodd"
-        d="M3 10a.75.75 0 01.75-.75h10.638L11.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 11-1.04-1.08l3.158-2.96H3.75A.75.75 0 013 10z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
 function MenuIcon() {
   return (
     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -78,29 +76,11 @@ function CloseIcon() {
   );
 }
 
-function LogoIcon() {
-  return (
-    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
-      <rect width="32" height="32" rx="8" fill="#25D366" />
-      <path
-        d="M16 6C10.48 6 6 10.48 6 16c0 1.77.46 3.43 1.27 4.88L6 26l5.23-1.24A9.96 9.96 0 0016 26c5.52 0 10-4.48 10-10S21.52 6 16 6zm0 18c-1.58 0-3.07-.46-4.33-1.24l-.31-.18-3.1.74.78-3.02-.2-.33A7.96 7.96 0 018 16c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"
-        fill="white"
-      />
-    </svg>
-  );
-}
-
 /* ------------------------------------------------------------------ */
-/*  Desktop dropdown                                                   */
+/*  Features Dropdown (2-column grid)                                  */
 /* ------------------------------------------------------------------ */
 
-function DesktopDropdown({
-  label,
-  items,
-}: {
-  label: string;
-  items: { label: string; href: string; external?: boolean }[];
-}) {
+function FeaturesDropdown() {
   const [open, setOpen] = useState(false);
   const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -109,49 +89,122 @@ function DesktopDropdown({
     setOpen(true);
   };
   const leave = () => {
-    timeout.current = setTimeout(() => setOpen(false), 150) as ReturnType<typeof setTimeout>;
+    timeout.current = setTimeout(() => setOpen(false), 150);
   };
 
   return (
     <div className="relative" onMouseEnter={enter} onMouseLeave={leave}>
       <button
-        className="flex items-center gap-1 text-sm font-medium text-[#191a1c] hover:text-[#0f5bff] transition-colors py-2"
+        className="flex items-center gap-1 text-[15px] font-medium text-[#191a1c] hover:text-[#0f5bff] transition-colors py-2"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
       >
-        {label}
-        <ChevronDownIcon className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`} />
+        Features
+        <ChevronDownIcon className={`w-4 h-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
 
-      {open && (
-        <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50">
-          <div className="bg-white rounded-xl shadow-lg ring-1 ring-black/5 py-2 min-w-[220px]">
-            {items.map((item) =>
-              item.external ? (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block px-4 py-2 text-sm text-[#191a1c] hover:bg-gray-50 hover:text-[#0f5bff] transition-colors"
-                >
+      <div
+        className={`absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50 transition-all duration-200 ${
+          open ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"
+        }`}
+      >
+        <div className="bg-white rounded-xl shadow-xl ring-1 ring-black/5 border border-gray-100 p-4 w-[420px]">
+          <div className="grid grid-cols-2 gap-1">
+            {featuresItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex items-center gap-3 rounded-lg px-3 py-2.5 hover:bg-gray-50 transition-colors group"
+                onClick={() => setOpen(false)}
+              >
+                <Image
+                  src={item.icon}
+                  alt={item.label}
+                  width={32}
+                  height={32}
+                  className="shrink-0"
+                />
+                <span className="text-sm font-semibold text-[#191a1c] group-hover:text-[#0f5bff] transition-colors">
                   {item.label}
-                  <span className="ml-1 text-xs text-[#667085]">&#8599;</span>
-                </a>
-              ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block px-4 py-2 text-sm text-[#191a1c] hover:bg-gray-50 hover:text-[#0f5bff] transition-colors"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              )
-            )}
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
-      )}
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Resources Dropdown (single column)                                 */
+/* ------------------------------------------------------------------ */
+
+function ResourcesDropdown() {
+  const [open, setOpen] = useState(false);
+  const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const enter = () => {
+    if (timeout.current) clearTimeout(timeout.current);
+    setOpen(true);
+  };
+  const leave = () => {
+    timeout.current = setTimeout(() => setOpen(false), 150);
+  };
+
+  return (
+    <div className="relative" onMouseEnter={enter} onMouseLeave={leave}>
+      <button
+        className="flex items-center gap-1 text-[15px] font-medium text-[#191a1c] hover:text-[#0f5bff] transition-colors py-2"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+      >
+        Resources
+        <ChevronDownIcon className={`w-4 h-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+      </button>
+
+      <div
+        className={`absolute left-1/2 -translate-x-1/2 top-full pt-2 z-50 transition-all duration-200 ${
+          open ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"
+        }`}
+      >
+        <div className="bg-white rounded-xl shadow-xl ring-1 ring-black/5 border border-gray-100 py-2 min-w-[260px]">
+          {resourcesItems.map((item) => {
+            const inner = (
+              <span className="flex items-center gap-2">
+                {item.label}
+                {item.badge && (
+                  <span className="inline-flex items-center rounded-full bg-orange-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-orange-500 ring-1 ring-inset ring-orange-500/20">
+                    {item.badge}
+                  </span>
+                )}
+                {item.external && <span className="text-xs text-gray-400">&#8599;</span>}
+              </span>
+            );
+
+            return item.external ? (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-2.5 text-sm text-[#191a1c] hover:bg-gray-50 hover:text-[#0f5bff] transition-colors"
+              >
+                {inner}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="block px-4 py-2.5 text-sm text-[#191a1c] hover:bg-gray-50 hover:text-[#0f5bff] transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                {inner}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
@@ -162,51 +215,31 @@ function DesktopDropdown({
 
 function MobileAccordion({
   label,
-  items,
-  onNavigate,
+  children,
 }: {
   label: string;
-  items: { label: string; href: string; external?: boolean }[];
-  onNavigate: () => void;
+  children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="border-b border-[#e5e5e8]">
       <button
-        className="flex w-full items-center justify-between py-3 text-base font-medium text-[#191a1c]"
+        className="flex w-full items-center justify-between py-4 text-base font-medium text-[#191a1c]"
         onClick={() => setOpen((o) => !o)}
       >
         {label}
-        <ChevronDownIcon className={`w-5 h-5 transition-transform ${open ? "rotate-180" : ""}`} />
+        <ChevronDownIcon
+          className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        />
       </button>
-      {open && (
-        <div className="pb-3 pl-4 space-y-2">
-          {items.map((item) =>
-            item.external ? (
-              <a
-                key={item.href}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-sm text-[#667085] hover:text-[#0f5bff]"
-                onClick={onNavigate}
-              >
-                {item.label} &#8599;
-              </a>
-            ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block text-sm text-[#667085] hover:text-[#0f5bff]"
-                onClick={onNavigate}
-              >
-                {item.label}
-              </Link>
-            )
-          )}
-        </div>
-      )}
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          open ? "max-h-[600px] pb-4" : "max-h-0"
+        }`}
+      >
+        {children}
+      </div>
     </div>
   );
 }
@@ -218,7 +251,6 @@ function MobileAccordion({
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
@@ -229,43 +261,49 @@ export default function Header() {
   const closeMobile = () => setMobileOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-[#e5e5e8]">
+    <header className="sticky top-0 z-50 bg-white border-b border-[#e5e5e8]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <LogoIcon />
-          <span className="text-xl font-bold font-heading text-[#191a1c]">ChatDaddy</span>
+          <Image
+            src="/images/chatdaddy-icon.png"
+            alt="ChatDaddy"
+            width={28}
+            height={28}
+            className="shrink-0"
+          />
+          <span className="font-bold text-lg text-[#191a1c]">ChatDaddy</span>
         </Link>
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-8">
-          <DesktopDropdown label="Features" items={featuresItems} />
-          <DesktopDropdown label="Resources" items={resourcesItems} />
+          <FeaturesDropdown />
+          <ResourcesDropdown />
           <Link
             href="/pricing"
-            className="flex items-center gap-1 text-sm font-medium text-[#191a1c] hover:text-[#0f5bff] transition-colors"
+            className="flex items-center gap-1 text-[15px] font-medium text-[#191a1c] hover:text-[#0f5bff] transition-colors"
           >
             Pricing
             <ChevronDownIcon />
           </Link>
           <Link
             href="/whatsapp-coexistence"
-            className="flex items-center gap-1.5 text-sm font-medium text-[#191a1c] hover:text-[#0f5bff] transition-colors"
+            className="flex items-center gap-2 text-[15px] font-medium text-[#191a1c] hover:text-[#0f5bff] transition-colors"
           >
             Co-Existence
-            <span className="inline-flex items-center rounded-full bg-red-50 px-2 py-0.5 text-[10px] font-semibold text-red-600 ring-1 ring-inset ring-red-500/20">
-              Important
+            <span className="inline-flex items-center rounded-full bg-red-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-red-500 ring-1 ring-inset ring-red-500/20">
+              IMPORTANT
             </span>
           </Link>
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-4">
           <a
             href={BOOK_DEMO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg border border-[#e5e5e8] px-4 py-2 text-sm font-medium text-[#191a1c] hover:bg-gray-50 transition-colors"
+            className="text-[15px] font-medium text-[#191a1c] hover:text-[#0f5bff] transition-colors"
           >
             Book Demo
           </a>
@@ -273,10 +311,10 @@ export default function Header() {
             href={SIGNUP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-lg bg-[#25D366] px-4 py-2 text-sm font-medium text-white hover:bg-[#1fba59] transition-colors"
+            className="inline-flex items-center gap-2 rounded-full bg-[#0f5bff] h-10 px-5 text-[15px] font-medium text-white hover:bg-[#0d4fdf] transition-colors"
           >
             Get Started
-            <ArrowRightIcon />
+            <span className="w-2 h-2 rounded-full bg-white/80" />
           </a>
         </div>
 
@@ -290,54 +328,121 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 z-40 bg-white overflow-y-auto">
-          <div className="px-4 py-4 space-y-0">
-            <MobileAccordion label="Features" items={featuresItems} onNavigate={closeMobile} />
-            <MobileAccordion label="Resources" items={resourcesItems} onNavigate={closeMobile} />
+      {/* Mobile menu overlay */}
+      <div
+        className={`lg:hidden fixed inset-0 top-16 z-40 bg-black/20 transition-opacity duration-300 ${
+          mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={closeMobile}
+      />
 
-            <Link
-              href="/pricing"
-              className="block border-b border-[#e5e5e8] py-3 text-base font-medium text-[#191a1c]"
-              onClick={closeMobile}
-            >
-              Pricing
-            </Link>
-
-            <Link
-              href="/whatsapp-coexistence"
-              className="flex items-center gap-2 border-b border-[#e5e5e8] py-3 text-base font-medium text-[#191a1c]"
-              onClick={closeMobile}
-            >
-              Co-Existence
-              <span className="inline-flex items-center rounded-full bg-red-50 px-2 py-0.5 text-[10px] font-semibold text-red-600 ring-1 ring-inset ring-red-500/20">
-                Important
-              </span>
-            </Link>
-
-            <div className="pt-6 flex flex-col gap-3">
-              <a
-                href={BOOK_DEMO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block rounded-lg border border-[#e5e5e8] px-4 py-3 text-center text-sm font-medium text-[#191a1c]"
-              >
-                Book Demo
-              </a>
-              <a
-                href={SIGNUP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center rounded-lg bg-[#25D366] px-4 py-3 text-sm font-medium text-white"
-              >
-                Get Started
-                <ArrowRightIcon />
-              </a>
+      {/* Mobile slide-in panel */}
+      <div
+        className={`lg:hidden fixed top-16 right-0 bottom-0 z-50 w-full max-w-sm bg-white shadow-2xl overflow-y-auto transition-transform duration-300 ease-out ${
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="px-5 py-2">
+          {/* Features */}
+          <MobileAccordion label="Features">
+            <div className="space-y-1 pl-1">
+              {featuresItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-50 transition-colors"
+                  onClick={closeMobile}
+                >
+                  <Image src={item.icon} alt={item.label} width={28} height={28} />
+                  <span className="text-sm font-medium text-[#191a1c]">{item.label}</span>
+                </Link>
+              ))}
             </div>
+          </MobileAccordion>
+
+          {/* Resources */}
+          <MobileAccordion label="Resources">
+            <div className="space-y-1 pl-1">
+              {resourcesItems.map((item) => {
+                const content = (
+                  <span className="flex items-center gap-2 text-sm text-[#667085] hover:text-[#0f5bff]">
+                    {item.label}
+                    {item.badge && (
+                      <span className="inline-flex items-center rounded-full bg-orange-500/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-orange-500">
+                        {item.badge}
+                      </span>
+                    )}
+                    {item.external && <span className="text-xs">&#8599;</span>}
+                  </span>
+                );
+                return item.external ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-3 py-2"
+                    onClick={closeMobile}
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block px-3 py-2"
+                    onClick={closeMobile}
+                  >
+                    {content}
+                  </Link>
+                );
+              })}
+            </div>
+          </MobileAccordion>
+
+          {/* Pricing */}
+          <Link
+            href="/pricing"
+            className="flex items-center border-b border-[#e5e5e8] py-4 text-base font-medium text-[#191a1c]"
+            onClick={closeMobile}
+          >
+            Pricing
+          </Link>
+
+          {/* Co-Existence */}
+          <Link
+            href="/whatsapp-coexistence"
+            className="flex items-center gap-2 border-b border-[#e5e5e8] py-4 text-base font-medium text-[#191a1c]"
+            onClick={closeMobile}
+          >
+            Co-Existence
+            <span className="inline-flex items-center rounded-full bg-red-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-red-500">
+              IMPORTANT
+            </span>
+          </Link>
+
+          {/* CTA buttons */}
+          <div className="pt-6 flex flex-col gap-3">
+            <a
+              href={BOOK_DEMO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-full border border-[#e5e5e8] h-12 leading-[48px] text-center text-[15px] font-medium text-[#191a1c] hover:bg-gray-50 transition-colors"
+            >
+              Book Demo
+            </a>
+            <a
+              href={SIGNUP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 rounded-full bg-[#0f5bff] h-12 text-[15px] font-medium text-white hover:bg-[#0d4fdf] transition-colors"
+            >
+              Get Started
+              <span className="w-2 h-2 rounded-full bg-white/80" />
+            </a>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -28,14 +29,23 @@ const companyLinks: { label: string; href: string; external?: boolean }[] = [
   { label: "Contact Us", href: "/contact-us" },
 ];
 
-const resourcesLinks: { label: string; href: string; external?: boolean; badge?: string }[] = [
+const resourcesLinks: {
+  label: string;
+  href: string;
+  external?: boolean;
+  badge?: string;
+}[] = [
   { label: "Success Stories", href: "/success-studies" },
   { label: "Blog Posts", href: "/blog" },
-  { label: "Co-Existence", href: "/whatsapp-coexistence", badge: "Important" },
+  { label: "Co-Existence", href: "/whatsapp-coexistence", badge: "IMPORTANT" },
   { label: "WhatsApp Link Generator", href: "/resources/whatsapp-link-generator" },
   { label: "ROI Calculator", href: "/resources/roi-calculator" },
   { label: "Help Center", href: "https://help.chatdaddy.tech/", external: true },
-  { label: "API Doc", href: "https://chatdaddy.stoplight.io/docs/openapi/repos/chatdaddy-service-auth/openapi.yaml", external: true },
+  {
+    label: "API Doc",
+    href: "https://chatdaddy.stoplight.io/docs/openapi/repos/chatdaddy-service-auth/openapi.yaml",
+    external: true,
+  },
   { label: "Service Status", href: "https://status.chatdaddy.tech/", external: true },
 ];
 
@@ -46,57 +56,65 @@ const legalLinks = [
 ];
 
 /* ------------------------------------------------------------------ */
-/*  Icons                                                              */
+/*  Social Icons (circle style, ~32px)                                 */
 /* ------------------------------------------------------------------ */
 
-function LogoIcon() {
+function FacebookIcon() {
   return (
-    <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
-      <rect width="32" height="32" rx="8" fill="#25D366" />
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.1" />
       <path
-        d="M16 6C10.48 6 6 10.48 6 16c0 1.77.46 3.43 1.27 4.88L6 26l5.23-1.24A9.96 9.96 0 0016 26c5.52 0 10-4.48 10-10S21.52 6 16 6zm0 18c-1.58 0-3.07-.46-4.33-1.24l-.31-.18-3.1.74.78-3.02-.2-.33A7.96 7.96 0 018 16c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"
+        d="M17.5 13h2l-.5 2h-1.5v6h-2v-6h-2v-2h2v-1.654C15.5 9.818 16.318 9 17.826 9H19.5v2h-1.174c-.51 0-.826.316-.826.826V13z"
         fill="white"
       />
     </svg>
   );
 }
 
-function FacebookIcon() {
-  return (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-    </svg>
-  );
-}
-
 function InstagramIcon() {
   return (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.1" />
+      <path
+        d="M16 11.5c-2.485 0-4.5 2.015-4.5 4.5s2.015 4.5 4.5 4.5 4.5-2.015 4.5-4.5-2.015-4.5-4.5-4.5zm0 7.425a2.928 2.928 0 01-2.925-2.925A2.928 2.928 0 0116 13.075 2.928 2.928 0 0118.925 16 2.928 2.928 0 0116 18.925zm5.738-7.613a1.05 1.05 0 11-2.1 0 1.05 1.05 0 012.1 0zM23.4 16c0-1.02.009-2.031-.048-3.048-.057-1.182-.326-2.23-1.188-3.092-.864-.864-1.91-1.131-3.092-1.188C18.054 8.615 17.043 8.625 16.023 8.625s-2.031-.009-3.048.048c-1.182.057-2.23.326-3.092 1.188-.864.864-1.131 1.91-1.188 3.092-.057 1.018-.048 2.029-.048 3.048s-.009 2.031.048 3.048c.057 1.182.326 2.23 1.188 3.092.864.864 1.91 1.131 3.092 1.188 1.018.057 2.029.048 3.048.048s2.031.009 3.048-.048c1.182-.057 2.23-.326 3.092-1.188.864-.864 1.131-1.91 1.188-3.092.059-1.018.048-2.029.048-3.048zm-1.875 4.612c-.144.363-.326.624-.613.911-.287.287-.548.469-.911.613-.938.372-3.164.288-4.2.288s-3.264.082-4.2-.29a2.562 2.562 0 01-.911-.612 2.562 2.562 0 01-.613-.911c-.37-.938-.288-3.164-.288-4.2s-.08-3.264.29-4.2c.144-.363.326-.624.612-.911.287-.287.548-.469.911-.613.938-.372 3.164-.288 4.2-.288s3.264-.082 4.2.29c.363.144.624.326.911.612.287.287.469.548.613.911.372.938.288 3.164.288 4.2s.082 3.264-.288 4.2z"
+        fill="white"
+      />
     </svg>
   );
 }
 
 function TikTokIcon() {
   return (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.1" />
+      <path
+        d="M19.32 9.5c.07 1.15.48 2.32 1.32 3.14.84.83 2.02 1.22 3.18 1.34v3.03c-1.08-.04-2.17-.26-3.15-.73-.43-.2-.82-.44-1.22-.7v6.56c-.06 1.05-.4 2.1-1.01 2.96-.98 1.44-2.69 2.38-4.43 2.41-1.08.06-2.15-.23-3.06-.77-1.52-.89-2.58-2.53-2.74-4.29-.02-.37-.02-.75 0-1.12.13-1.43.84-2.79 1.94-3.72 1.24-1.08 2.99-1.6 4.61-1.29v3.33c-.74-.24-1.61-.17-2.27.28-.47.31-.83.78-1.02 1.31-.16.38-.11.8-.1 1.21.18 1.23 1.37 2.27 2.63 2.16.84-.01 1.64-.5 2.08-1.21.14-.25.3-.5.31-.79.07-1.34.04-2.68.05-4.02V9.5h2.88z"
+        fill="white"
+      />
     </svg>
   );
 }
 
 function YouTubeIcon() {
   return (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.1" />
+      <path
+        d="M23.76 11.89a2.26 2.26 0 00-1.59-1.6C20.88 10 16 10 16 10s-4.88 0-6.17.29a2.26 2.26 0 00-1.59 1.6C8 13.17 8 16 8 16s0 2.83.24 4.11a2.26 2.26 0 001.59 1.6C11.12 22 16 22 16 22s4.88 0 6.17-.29a2.26 2.26 0 001.59-1.6C24 18.83 24 16 24 16s0-2.83-.24-4.11zM14.4 18.6v-5.2L18.96 16l-4.56 2.6z"
+        fill="white"
+      />
     </svg>
   );
 }
 
 function XiaohongshuIcon() {
   return (
-    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.5 14.5h-3v-3h3v3zm0-4.5h-3V7h3v5z" />
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="16" fill="white" fillOpacity="0.1" />
+      <path
+        d="M10.5 11h3.25l1.5 5.5h.1L16.85 11h3.25l-3.5 10h-2.6l-3.5-10zm8 0H22v1.5h-2v7h2V21h-5.5v-1.5h2v-7h-2V11z"
+        fill="white"
+      />
     </svg>
   );
 }
@@ -114,7 +132,7 @@ function FooterLinkColumn({
 }) {
   return (
     <div>
-      <h3 className="text-sm font-semibold text-white mb-4">{title}</h3>
+      <h3 className="text-sm font-semibold text-white mb-5">{title}</h3>
       <ul className="space-y-3">
         {links.map((link) => (
           <li key={link.href + link.label}>
@@ -123,7 +141,7 @@ function FooterLinkColumn({
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1.5"
+                className="text-[13px] text-[#9ca3af] hover:text-white transition-colors inline-flex items-center gap-1.5"
               >
                 {link.label}
                 <span className="text-xs">&#8599;</span>
@@ -131,11 +149,11 @@ function FooterLinkColumn({
             ) : (
               <Link
                 href={link.href}
-                className="text-sm text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1.5"
+                className="text-[13px] text-[#9ca3af] hover:text-white transition-colors inline-flex items-center gap-1.5"
               >
                 {link.label}
                 {link.badge && (
-                  <span className="inline-flex items-center rounded-full bg-red-500/10 px-2 py-0.5 text-[10px] font-semibold text-red-400 ring-1 ring-inset ring-red-500/20">
+                  <span className="inline-flex items-center rounded-full bg-orange-500/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-orange-500 ring-1 ring-inset ring-orange-500/20">
                     {link.badge}
                   </span>
                 )}
@@ -154,38 +172,47 @@ function FooterLinkColumn({
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0f] text-white">
+    <footer className="bg-[#0d0f1a] text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        {/* Top: logo */}
-        <div className="mb-12">
-          <Link href="/" className="inline-flex items-center gap-2">
-            <LogoIcon />
-            <span className="text-xl font-bold font-heading text-white">ChatDaddy</span>
-          </Link>
+        {/* Top section: logo + columns */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+          {/* Left: Logo */}
+          <div className="shrink-0">
+            <Link href="/" className="inline-flex items-center gap-2">
+              <Image
+                src="/images/chatdaddy-icon.png"
+                alt="ChatDaddy"
+                width={28}
+                height={28}
+                className="shrink-0 brightness-0 invert"
+              />
+              <span className="text-lg font-bold text-white">ChatDaddy</span>
+            </Link>
+          </div>
+
+          {/* Right: Link columns */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 flex-1">
+            <FooterLinkColumn title="Features" links={featuresLinks} />
+            <FooterLinkColumn title="Company" links={companyLinks} />
+            <FooterLinkColumn title="Resources" links={resourcesLinks} />
+            <FooterLinkColumn title="Security & Legal" links={legalLinks} />
+          </div>
         </div>
 
-        {/* Link columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-          <FooterLinkColumn title="Features" links={featuresLinks} />
-          <FooterLinkColumn title="Company" links={companyLinks} />
-          <FooterLinkColumn title="Resources" links={resourcesLinks} />
-          <FooterLinkColumn title="Security & Legal" links={legalLinks} />
-        </div>
-
-        {/* Divider */}
-        <div className="mt-16 border-t border-white/10 pt-8">
+        {/* Bottom bar */}
+        <div className="mt-16 border-t border-[#1f2937] pt-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-gray-500">
               2026 Copyright &copy; TNT The Next Tech Ltd. All rights reserved.
             </p>
 
             {/* Social icons */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <a
                 href="https://www.facebook.com/chatdaddytech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors"
+                className="hover:opacity-80 transition-opacity"
                 aria-label="Facebook"
               >
                 <FacebookIcon />
@@ -194,7 +221,7 @@ export default function Footer() {
                 href="https://www.instagram.com/chatdaddy.tech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors"
+                className="hover:opacity-80 transition-opacity"
                 aria-label="Instagram"
               >
                 <InstagramIcon />
@@ -203,7 +230,7 @@ export default function Footer() {
                 href="https://www.tiktok.com/@chatdaddy.tech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors"
+                className="hover:opacity-80 transition-opacity"
                 aria-label="TikTok"
               >
                 <TikTokIcon />
@@ -212,7 +239,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@chatdaddy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors"
+                className="hover:opacity-80 transition-opacity"
                 aria-label="YouTube"
               >
                 <YouTubeIcon />
@@ -221,7 +248,7 @@ export default function Footer() {
                 href="https://www.xiaohongshu.com/user/profile/chatdaddy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors"
+                className="hover:opacity-80 transition-opacity"
                 aria-label="Xiaohongshu"
               >
                 <XiaohongshuIcon />
