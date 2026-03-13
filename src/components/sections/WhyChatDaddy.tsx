@@ -118,7 +118,7 @@ export default function WhyChatDaddy() {
                 key={feature.title}
                 className={`group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.06] backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.10] ${
                   isFirst ? "sm:row-span-2 lg:row-span-2" : ""
-                } ${isLast ? "sm:col-span-2 lg:col-span-1" : ""}`}
+                } ${isLast ? "sm:col-span-2 lg:col-span-2" : ""}`}
               >
                 {/* Dotted grid pattern overlay */}
                 <div
