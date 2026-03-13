@@ -18,6 +18,12 @@ const nextConfig: NextConfig = {
         destination: "https://chatdaddy.tech/:path*",
         permanent: true,
       },
+      // Legacy route redirects
+      {
+        source: "/contact",
+        destination: "/contact-us",
+        permanent: true,
+      },
     ];
   },
 

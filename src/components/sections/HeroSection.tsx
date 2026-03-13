@@ -147,6 +147,30 @@ export default function HeroSection() {
             businesses
           </p>
         </div>
+
+        {/* Partner logos */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-8 opacity-40">
+          {[
+            { src: "/images/framer/home-partner-logo-1.png", alt: "Partner", w: 32, h: 32 },
+            { src: "/images/framer/home-partner-logo-2.png", alt: "Partner", w: 32, h: 32 },
+            { src: "/images/framer/home-partner-logo-3.webp", alt: "Partner", w: 32, h: 32 },
+            { src: "/images/framer/home-partner-logo-4.webp", alt: "Partner", w: 32, h: 32 },
+            { src: "/images/framer/home-partner-logo-5.png", alt: "Partner", w: 32, h: 32 },
+            { src: "/images/framer/home-partner-logo-6.webp", alt: "Partner", w: 32, h: 32 },
+            { src: "/images/framer/home-partner-logo-7.png", alt: "Partner", w: 32, h: 32 },
+            { src: "/images/framer/home-partner-logo-8.png", alt: "Partner", w: 32, h: 32 },
+            { src: "/images/framer/home-partner-logo-9.jpeg", alt: "Partner", w: 32, h: 32 },
+          ].map((logo, i) => (
+            <Image
+              key={i}
+              src={logo.src}
+              alt={logo.alt}
+              width={logo.w}
+              height={logo.h}
+              className="h-8 w-auto grayscale"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

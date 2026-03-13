@@ -39,3 +39,8 @@ vercel-*.png
 verify-*.png
 chatdaddy-framer-*.png
 chatdaddy-vercel-*.png
+page-*.png
+final-check-*.png
+
+# Framer download script
+public/images/framer/download.sh
