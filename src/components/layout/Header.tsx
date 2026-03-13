@@ -266,7 +266,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <Image
-            src="/images/chatdaddy-icon.png"
+            src="/images/chatdaddy-logo.png"
             alt="ChatDaddy"
             width={28}
             height={28}

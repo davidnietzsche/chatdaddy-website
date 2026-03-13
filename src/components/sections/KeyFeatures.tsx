@@ -392,7 +392,7 @@ export default function KeyFeatures() {
         <div className="mt-20 flex flex-col items-center">
           <div className="rounded-[28px] shadow-[0_8px_40px_rgba(15,91,255,0.15)]">
             <Image
-              src="/images/chatdaddy-icon.png"
+              src="/images/chatdaddy-logo.png"
               alt="ChatDaddy"
               width={120}
               height={120}

@@ -61,7 +61,7 @@ export default function HeroSection() {
         {/* App icon */}
         <div className="mb-5">
           <Image
-            src="/images/chatdaddy-icon.png"
+            src="/images/chatdaddy-logo.png"
             alt="ChatDaddy"
             width={100}
             height={100}

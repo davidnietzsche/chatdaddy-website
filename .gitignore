@@ -33,3 +33,9 @@ yarn-error.log*
 
 # Sanity
 .sanity/
+# Screenshots (development artifacts)
+framer-*.png
+vercel-*.png
+verify-*.png
+chatdaddy-framer-*.png
+chatdaddy-vercel-*.png

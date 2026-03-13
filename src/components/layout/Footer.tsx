@@ -135,7 +135,7 @@ export default function Footer() {
           <div className="shrink-0">
             <Link href="/" className="inline-flex items-center gap-2.5">
               <Image
-                src="/images/chatdaddy-icon.png"
+                src="/images/chatdaddy-logo.png"
                 alt="ChatDaddy"
                 width={24}
                 height={24}
