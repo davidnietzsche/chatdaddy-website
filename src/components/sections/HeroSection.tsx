@@ -1,7 +1,13 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
-export default function HeroSection() {
+export default async function HeroSection() {
+  const t = await getTranslations("hero");
+  const tc = await getTranslations("common");
+
+  const [line1, line2] = t("heading").split("\n");
+
   return (
     <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#fafafa]">
       {/* Subtle tech grid background */}
@@ -19,10 +25,8 @@ export default function HeroSection() {
             height="120"
             patternUnits="userSpaceOnUse"
           >
-            {/* Thin grid lines */}
             <line x1="0" y1="60" x2="120" y2="60" stroke="#c0c0c0" strokeWidth="0.5" />
             <line x1="60" y1="0" x2="60" y2="120" stroke="#c0c0c0" strokeWidth="0.5" />
-            {/* Circuit traces */}
             <line x1="0" y1="30" x2="40" y2="30" stroke="#b0b0b0" strokeWidth="0.5" />
             <line x1="80" y1="30" x2="120" y2="30" stroke="#b0b0b0" strokeWidth="0.5" />
             <line x1="0" y1="90" x2="50" y2="90" stroke="#b0b0b0" strokeWidth="0.5" />
@@ -31,12 +35,10 @@ export default function HeroSection() {
             <line x1="90" y1="0" x2="90" y2="50" stroke="#b0b0b0" strokeWidth="0.5" />
             <line x1="30" y1="80" x2="30" y2="120" stroke="#b0b0b0" strokeWidth="0.5" />
             <line x1="90" y1="70" x2="90" y2="120" stroke="#b0b0b0" strokeWidth="0.5" />
-            {/* Diagonal connectors */}
             <line x1="40" y1="30" x2="60" y2="60" stroke="#b0b0b0" strokeWidth="0.5" />
             <line x1="80" y1="30" x2="60" y2="60" stroke="#b0b0b0" strokeWidth="0.5" />
             <line x1="50" y1="90" x2="30" y2="80" stroke="#b0b0b0" strokeWidth="0.5" />
             <line x1="70" y1="90" x2="90" y2="70" stroke="#b0b0b0" strokeWidth="0.5" />
-            {/* Node dots */}
             <circle cx="60" cy="60" r="2" fill="#c0c0c0" />
             <circle cx="40" cy="30" r="1.5" fill="#c0c0c0" />
             <circle cx="80" cy="30" r="1.5" fill="#c0c0c0" />
@@ -46,7 +48,6 @@ export default function HeroSection() {
             <circle cx="70" cy="90" r="1.5" fill="#c0c0c0" />
             <circle cx="30" cy="80" r="1.5" fill="#c0c0c0" />
             <circle cx="90" cy="70" r="1.5" fill="#c0c0c0" />
-            {/* Small squares at intersections */}
             <rect x="58" y="58" width="4" height="4" rx="0.5" fill="none" stroke="#c0c0c0" strokeWidth="0.5" />
           </pattern>
         </defs>
@@ -85,45 +86,46 @@ export default function HeroSection() {
               fill="#9ca3af"
             />
           </svg>
-          <span className="text-sm font-medium text-[#667085]">ChatDaddy</span>
+          <span className="text-sm font-medium text-[#667085]">{t("badge")}</span>
         </div>
 
         {/* Heading */}
         <h1 className="mx-auto max-w-4xl text-center font-heading text-[44px] font-bold leading-[1.08] tracking-[-0.03em] text-[#191a1c] sm:text-[56px] lg:text-[72px]">
-          Your AI-Powered
+          {line1}
           <br />
-          Messaging Platform
+          {line2}
         </h1>
 
         {/* Subtitle */}
         <p className="mx-auto mt-6 max-w-[640px] text-center text-[17px] leading-[1.65] text-[#667085]">
-          Streamline conversations across WhatsApp, Instagram, Facebook
-          Messenger, TikTok, SMS, Email, and more — all in one intelligent
-          platform built to grow your business.
+          {t("subtitle")}
         </p>
 
         {/* CTA Buttons */}
         <div className="mt-10 flex items-center gap-6">
-          <Link
+          <a
             href="https://chatdaddy-consultation.paperform.co/?utm_source=Website&utm_campaign=Website"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[15px] font-medium text-[#191a1c] transition-colors hover:text-[#0f5bff]"
           >
-            Book Demo
-          </Link>
-          <Link
+            {tc("bookDemo")}
+          </a>
+          <a
             href="https://app.chatdaddy.tech/SignUp?referralCode=Website"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 rounded-full bg-[#0f5bff] px-7 py-3.5 text-[15px] font-semibold text-white shadow-[0_2px_12px_rgba(15,91,255,0.3)] transition-all hover:bg-[#0d4fe0] hover:shadow-[0_4px_20px_rgba(15,91,255,0.4)]"
           >
-            Start For Free
+            {tc("startForFree")}
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white/20">
               <span className="h-1.5 w-1.5 rounded-full bg-white" />
             </span>
-          </Link>
+          </a>
         </div>
 
         {/* Social proof */}
         <div className="mt-16 flex items-center gap-3">
-          {/* Company avatar stack */}
           <div className="flex -space-x-2">
             {[
               { bg: "bg-red-500", text: "M", textColor: "text-yellow-300" },
@@ -140,11 +142,16 @@ export default function HeroSection() {
             ))}
           </div>
           <p className="text-sm text-[#667085]">
-            Managing{" "}
-            <span className="font-semibold text-[#191a1c]">10M+</span> daily
-            messages for{" "}
-            <span className="font-semibold text-[#191a1c]">23.5K+</span>{" "}
-            businesses
+            {t("socialProof", {
+              dailyMessages: "10M+",
+              businesses: "23.5K+",
+            }).split(/(10M\+|23\.5K\+)/).map((part, i) =>
+              part === "10M+" || part === "23.5K+" ? (
+                <span key={i} className="font-semibold text-[#191a1c]">{part}</span>
+              ) : (
+                part
+              )
+            )}
           </p>
         </div>
 

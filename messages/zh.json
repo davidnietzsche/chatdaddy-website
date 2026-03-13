@@ -1,0 +1,176 @@
+{
+  "common": {
+    "getStarted": "立即开始",
+    "bookDemo": "预约演示",
+    "startForFree": "免费开始",
+    "startFreeTrial": "开始免费试用",
+    "learnMore": "了解更多",
+    "goHome": "返回首页",
+    "backToBlog": "返回博客",
+    "comingSoon": "即将推出",
+    "important": "重要"
+  },
+  "header": {
+    "features": "功能",
+    "resources": "资源",
+    "pricing": "定价",
+    "coExistence": "共存模式",
+    "toggleMenu": "切换菜单",
+    "featureItems": {
+      "teamInbox": "团队收件箱",
+      "notification": "消息通知",
+      "chatbot": "智能聊天机器人",
+      "marketing": "营销推广",
+      "shop": "在线商店",
+      "pay": "在线支付",
+      "automation": "自动化流程",
+      "crm": "CRM"
+    },
+    "resourceItems": {
+      "successStories": "客户成功案例",
+      "blogPosts": "博客文章",
+      "coExistence": "共存模式",
+      "waLinkGenerator": "WhatsApp 链接生成器",
+      "roiCalculator": "ROI 计算器",
+      "helpCenter": "帮助中心",
+      "apiDoc": "API 文档",
+      "serviceStatus": "服务状态"
+    }
+  },
+  "footer": {
+    "features": "功能",
+    "company": "公司",
+    "resources": "资源",
+    "securityLegal": "安全与法律",
+    "aboutUs": "关于我们",
+    "careers": "招贤纳士",
+    "partnerProgram": "合作伙伴计划",
+    "pricing": "定价",
+    "supportPlan": "支持方案",
+    "contactUs": "联系我们",
+    "successStories": "客户成功案例",
+    "blogPosts": "博客文章",
+    "coExistence": "共存模式",
+    "waLinkGenerator": "WhatsApp 链接生成器",
+    "roiCalculator": "ROI 计算器",
+    "helpCenter": "帮助中心",
+    "apiDoc": "API 文档",
+    "serviceStatus": "服务状态",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "dpsa": "DPSA",
+    "copyright": "2026 版权所有 © TNT The Next Tech Ltd. 保留所有权利。"
+  },
+  "hero": {
+    "badge": "ChatDaddy",
+    "heading": "AI 驱动的\n全渠道消息平台",
+    "subtitle": "在一个智能平台上统一管理 WhatsApp、Instagram、Facebook Messenger、TikTok、短信、邮件等多渠道对话，助力业务增长。",
+    "socialProof": "每日为 <strong>{businesses}</strong> 家企业处理 <strong>{dailyMessages}</strong> 条消息"
+  },
+  "whyChatDaddy": {
+    "badge": "为什么选择 ChatDaddy？",
+    "heading": "为完整客户旅程而打造",
+    "subtitle": "无论是快速成长的初创企业还是体系成熟的大型公司，ChatDaddy 都能适配您团队的真实工作流程，而非让您来适应我们。",
+    "cards": {
+      "growthPartner": {
+        "title": "您的增长伙伴",
+        "description": "您的成功就是我们的成功。从入门引导到业务扩展，我们的团队始终助您释放 ChatDaddy 的全部价值。"
+      },
+      "onePlatform": {
+        "title": "一个平台覆盖完整客户旅程",
+        "description": "从首次触达到复购转化，ChatDaddy 将营销、销售和客服整合到一个高效的工作空间中。"
+      },
+      "scalable": {
+        "title": "可扩展、灵活且易于使用",
+        "description": "快速上手，与您常用的工具无缝集成，轻松扩展而不增加复杂性。"
+      },
+      "proven": {
+        "title": "经过验证的消息自动化",
+        "description": "每天管理数百万条对话，我们打造了一个化繁为简的平台，让您的团队专注于业务增长。"
+      }
+    }
+  },
+  "keyFeatures": {
+    "badge": "核心功能",
+    "heading": "围绕您的增长需求构建",
+    "subtitle": "从吸引新客户到留住忠实用户，ChatDaddy 为您的团队提供一站式增长所需的一切工具。",
+    "acquireHeading": "从获取客户到转化线索……",
+    "retainHeading": "到留住客户并管理业务增长",
+    "acquire": {
+      "marketing": {
+        "label": "营销推广",
+        "description": "通过智能群发、Click-to-WhatsApp 广告和二维码入口，轻松触达潜在客户，扩大品牌影响力。"
+      },
+      "shop": {
+        "label": "在线商店",
+        "description": "将 WhatsApp 变为您的店铺。在聊天中展示商品目录、接受订单并发送付款链接。"
+      },
+      "chatbot": {
+        "label": "智能聊天机器人",
+        "description": "AI 驱动的聊天机器人全天候在线，自动回答问题、筛选意向客户并预约会议。"
+      },
+      "pay": {
+        "label": "在线支付",
+        "description": "在 WhatsApp 中直接收款。生成付款链接、发送账单，轻松追踪每笔交易。"
+      }
+    },
+    "retain": {
+      "teamInbox": {
+        "label": "团队收件箱",
+        "description": "在统一的共享收件箱中管理所有对话。分配聊天、添加备注，与团队实时协作。"
+      },
+      "notification": {
+        "label": "消息通知",
+        "description": "智能提醒让您不错过任何消息。按优先级、分配人或关键词接收通知，不再遗漏任何商机。"
+      },
+      "automation": {
+        "label": "自动化流程",
+        "description": "通过可视化流程编辑器自动处理重复性任务。无需编写代码，即可设置触发器、条件和动作。"
+      },
+      "crm": {
+        "label": "CRM",
+        "description": "追踪每一次客户互动。为联系人打标签、评估线索质量，构建精准分群以实现定向触达。"
+      }
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "该页面不存在或已被移动。",
+    "goHome": "返回首页"
+  },
+  "blog": {
+    "badge": "博客",
+    "heading": "技巧、指南与动态",
+    "subtitle": "ChatDaddy 团队分享关于 WhatsApp CRM、业务自动化、聊天机器人策略和消息最佳实践的专业见解。",
+    "emptyTitle": "即将推出",
+    "emptyMessage": "我们正在撰写关于 WhatsApp 业务自动化、聊天机器人策略和 CRM 最佳实践的实用指南，敬请期待！",
+    "backToHome": "返回首页",
+    "relatedArticles": "相关文章",
+    "updatedOn": "更新于 {date}"
+  },
+  "integration": {
+    "badge": "50+ 集成",
+    "heading": "将 WhatsApp 与您常用的工具连接",
+    "subtitle": "将 ChatDaddy 与您的 CRM、电商平台、客服系统等无缝集成。自动化工作流程，保持数据同步。",
+    "all": "全部",
+    "crm": "CRM",
+    "ecommerce": "电商",
+    "messaging": "即时通讯",
+    "productivity": "效率工具",
+    "marketing": "营销",
+    "dontSeeYourTool": "没有找到您使用的工具？",
+    "dontSeeDescription": "ChatDaddy 通过 Zapier 和 Make 可连接数千款应用。我们还为企业客户提供定制集成服务。",
+    "requestIntegration": "申请集成"
+  },
+  "pricing": {
+    "heading": "简单透明的定价",
+    "subtitle": "免费开始，随业务增长按需升级。无隐藏费用。",
+    "monthly": "月付",
+    "yearly": "年付",
+    "perMonth": "/月",
+    "getStarted": "立即开始",
+    "mostPopular": "最受欢迎",
+    "enterprise": "企业版",
+    "contactSales": "联系销售"
+  }
+}

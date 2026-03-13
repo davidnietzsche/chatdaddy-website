@@ -1,43 +1,40 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
-const featuresItems = [
-  { label: "Team Inbox", href: "/features/team-inbox", icon: "/images/feature-icon-1.png" },
-  { label: "Notification", href: "/features/notification", icon: "/images/feature-icon-2.png" },
-  { label: "Chatbot", href: "/features/chatbot", icon: "/images/feature-icon-3.png" },
-  { label: "Marketing", href: "/features/marketing", icon: "/images/feature-icon-4.png" },
-  { label: "Shop", href: "/features/shop", icon: "/images/feature-icon-5.png" },
-  { label: "Pay", href: "/features/pay", icon: "/images/feature-icon-6.png" },
-  { label: "Automation", href: "/features/automation", icon: "/images/feature-icon-7.png" },
-  { label: "CRM", href: "/features/crm", icon: "/images/feature-icon-8.png" },
-];
+const featureKeys = [
+  { key: "teamInbox", href: "/features/team-inbox", icon: "/images/feature-icon-1.png" },
+  { key: "notification", href: "/features/notification", icon: "/images/feature-icon-2.png" },
+  { key: "chatbot", href: "/features/chatbot", icon: "/images/feature-icon-3.png" },
+  { key: "marketing", href: "/features/marketing", icon: "/images/feature-icon-4.png" },
+  { key: "shop", href: "/features/shop", icon: "/images/feature-icon-5.png" },
+  { key: "pay", href: "/features/pay", icon: "/images/feature-icon-6.png" },
+  { key: "automation", href: "/features/automation", icon: "/images/feature-icon-7.png" },
+  { key: "crm", href: "/features/crm", icon: "/images/feature-icon-8.png" },
+] as const;
 
-const resourcesItems: {
-  label: string;
-  href: string;
-  external?: boolean;
-  badge?: string;
-}[] = [
-  { label: "Success Stories", href: "/success-studies" },
-  { label: "Blog Posts", href: "/blog" },
-  { label: "Co-Existence", href: "/whatsapp-coexistence", badge: "IMPORTANT" },
-  { label: "WhatsApp Link Generator", href: "/resources/whatsapp-link-generator" },
-  { label: "ROI Calculator", href: "/resources/roi-calculator" },
-  { label: "Help Center", href: "https://help.chatdaddy.tech/", external: true },
+const resourceKeys = [
+  { key: "successStories", href: "/success-studies" },
+  { key: "blogPosts", href: "/blog" },
+  { key: "coExistence", href: "/whatsapp-coexistence", badge: true },
+  { key: "waLinkGenerator", href: "/resources/whatsapp-link-generator" },
+  { key: "roiCalculator", href: "/resources/roi-calculator" },
+  { key: "helpCenter", href: "https://help.chatdaddy.tech/", external: true },
   {
-    label: "API Doc",
+    key: "apiDoc",
     href: "https://chatdaddy.stoplight.io/docs/openapi/repos/chatdaddy-service-auth/openapi.yaml",
     external: true,
   },
-  { label: "Service Status", href: "https://status.chatdaddy.tech/", external: true },
-];
+  { key: "serviceStatus", href: "https://status.chatdaddy.tech/", external: true },
+] as const;
 
 const BOOK_DEMO_URL =
   "https://chatdaddy-consultation.paperform.co/?utm_source=Website&utm_campaign=Website";
@@ -83,6 +80,7 @@ function CloseIcon() {
 function FeaturesDropdown() {
   const [open, setOpen] = useState(false);
   const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const t = useTranslations("header");
 
   const enter = () => {
     if (timeout.current) clearTimeout(timeout.current);
@@ -99,7 +97,7 @@ function FeaturesDropdown() {
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
       >
-        Features
+        {t("features")}
         <ChevronDownIcon className={`w-4 h-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
 
@@ -110,7 +108,7 @@ function FeaturesDropdown() {
       >
         <div className="bg-white rounded-xl shadow-xl ring-1 ring-black/5 border border-gray-100 p-4 w-[420px]">
           <div className="grid grid-cols-2 gap-1">
-            {featuresItems.map((item) => (
+            {featureKeys.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -119,13 +117,13 @@ function FeaturesDropdown() {
               >
                 <Image
                   src={item.icon}
-                  alt={item.label}
+                  alt={t(`featureItems.${item.key}`)}
                   width={32}
                   height={32}
                   className="shrink-0"
                 />
                 <span className="text-sm font-semibold text-[#191a1c] group-hover:text-[#0f5bff] transition-colors">
-                  {item.label}
+                  {t(`featureItems.${item.key}`)}
                 </span>
               </Link>
             ))}
@@ -143,6 +141,8 @@ function FeaturesDropdown() {
 function ResourcesDropdown() {
   const [open, setOpen] = useState(false);
   const timeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const t = useTranslations("header");
+  const tc = useTranslations("common");
 
   const enter = () => {
     if (timeout.current) clearTimeout(timeout.current);
@@ -159,7 +159,7 @@ function ResourcesDropdown() {
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
       >
-        Resources
+        {t("resources")}
         <ChevronDownIcon className={`w-4 h-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
       </button>
 
@@ -169,20 +169,21 @@ function ResourcesDropdown() {
         }`}
       >
         <div className="bg-white rounded-xl shadow-xl ring-1 ring-black/5 border border-gray-100 py-2 min-w-[260px]">
-          {resourcesItems.map((item) => {
+          {resourceKeys.map((item) => {
+            const label = t(`resourceItems.${item.key}`);
             const inner = (
               <span className="flex items-center gap-2">
-                {item.label}
-                {item.badge && (
+                {label}
+                {"badge" in item && item.badge && (
                   <span className="inline-flex items-center rounded-full bg-orange-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-orange-500 ring-1 ring-inset ring-orange-500/20">
-                    {item.badge}
+                    {tc("important")}
                   </span>
                 )}
-                {item.external && <span className="text-xs text-gray-400">&#8599;</span>}
+                {"external" in item && item.external && <span className="text-xs text-gray-400">&#8599;</span>}
               </span>
             );
 
-            return item.external ? (
+            return "external" in item && item.external ? (
               <a
                 key={item.href}
                 href={item.href}
@@ -250,6 +251,8 @@ function MobileAccordion({
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const t = useTranslations("header");
+  const tc = useTranslations("common");
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -283,29 +286,30 @@ export default function Header() {
             href="/pricing"
             className="flex items-center gap-1 text-[15px] font-medium text-[#191a1c] hover:text-[#0f5bff] transition-colors"
           >
-            Pricing
+            {t("pricing")}
             <ChevronDownIcon />
           </Link>
           <Link
             href="/whatsapp-coexistence"
             className="flex items-center gap-2 text-[15px] font-medium text-[#191a1c] hover:text-[#0f5bff] transition-colors"
           >
-            Co-Existence
+            {t("coExistence")}
             <span className="inline-flex items-center rounded-full bg-red-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-red-500 ring-1 ring-inset ring-red-500/20">
-              IMPORTANT
+              {tc("important")}
             </span>
           </Link>
         </div>
 
-        {/* Desktop CTA */}
+        {/* Desktop CTA + Language Switcher */}
         <div className="hidden lg:flex items-center gap-4">
+          <LanguageSwitcher />
           <a
             href={BOOK_DEMO_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-[15px] font-medium text-[#191a1c] hover:text-[#0f5bff] transition-colors"
           >
-            Book Demo
+            {tc("bookDemo")}
           </a>
           <a
             href={SIGNUP_URL}
@@ -313,7 +317,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-[#0f5bff] h-10 px-5 text-[15px] font-medium text-white hover:bg-[#0d4fdf] transition-colors"
           >
-            Get Started
+            {tc("getStarted")}
             <span className="w-2 h-2 rounded-full bg-white/80" />
           </a>
         </div>
@@ -322,7 +326,7 @@ export default function Header() {
         <button
           className="lg:hidden p-2 -mr-2 text-[#191a1c]"
           onClick={() => setMobileOpen((o) => !o)}
-          aria-label="Toggle menu"
+          aria-label={t("toggleMenu")}
         >
           {mobileOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
@@ -343,39 +347,45 @@ export default function Header() {
         }`}
       >
         <div className="px-5 py-2">
+          {/* Language Switcher (mobile) */}
+          <div className="pb-3 border-b border-[#e5e5e8]">
+            <LanguageSwitcher />
+          </div>
+
           {/* Features */}
-          <MobileAccordion label="Features">
+          <MobileAccordion label={t("features")}>
             <div className="space-y-1 pl-1">
-              {featuresItems.map((item) => (
+              {featureKeys.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className="flex items-center gap-3 rounded-lg px-3 py-2 hover:bg-gray-50 transition-colors"
                   onClick={closeMobile}
                 >
-                  <Image src={item.icon} alt={item.label} width={28} height={28} />
-                  <span className="text-sm font-medium text-[#191a1c]">{item.label}</span>
+                  <Image src={item.icon} alt={t(`featureItems.${item.key}`)} width={28} height={28} />
+                  <span className="text-sm font-medium text-[#191a1c]">{t(`featureItems.${item.key}`)}</span>
                 </Link>
               ))}
             </div>
           </MobileAccordion>
 
           {/* Resources */}
-          <MobileAccordion label="Resources">
+          <MobileAccordion label={t("resources")}>
             <div className="space-y-1 pl-1">
-              {resourcesItems.map((item) => {
+              {resourceKeys.map((item) => {
+                const label = t(`resourceItems.${item.key}`);
                 const content = (
                   <span className="flex items-center gap-2 text-sm text-[#667085] hover:text-[#0f5bff]">
-                    {item.label}
-                    {item.badge && (
+                    {label}
+                    {"badge" in item && item.badge && (
                       <span className="inline-flex items-center rounded-full bg-orange-500/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-orange-500">
-                        {item.badge}
+                        {tc("important")}
                       </span>
                     )}
-                    {item.external && <span className="text-xs">&#8599;</span>}
+                    {"external" in item && item.external && <span className="text-xs">&#8599;</span>}
                   </span>
                 );
-                return item.external ? (
+                return "external" in item && item.external ? (
                   <a
                     key={item.href}
                     href={item.href}
@@ -406,7 +416,7 @@ export default function Header() {
             className="flex items-center border-b border-[#e5e5e8] py-4 text-base font-medium text-[#191a1c]"
             onClick={closeMobile}
           >
-            Pricing
+            {t("pricing")}
           </Link>
 
           {/* Co-Existence */}
@@ -415,9 +425,9 @@ export default function Header() {
             className="flex items-center gap-2 border-b border-[#e5e5e8] py-4 text-base font-medium text-[#191a1c]"
             onClick={closeMobile}
           >
-            Co-Existence
+            {t("coExistence")}
             <span className="inline-flex items-center rounded-full bg-red-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-red-500">
-              IMPORTANT
+              {tc("important")}
             </span>
           </Link>
 
@@ -429,7 +439,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="block rounded-full border border-[#e5e5e8] h-12 leading-[48px] text-center text-[15px] font-medium text-[#191a1c] hover:bg-gray-50 transition-colors"
             >
-              Book Demo
+              {tc("bookDemo")}
             </a>
             <a
               href={SIGNUP_URL}
@@ -437,7 +447,7 @@ export default function Header() {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-full bg-[#0f5bff] h-12 text-[15px] font-medium text-white hover:bg-[#0d4fdf] transition-colors"
             >
-              Get Started
+              {tc("getStarted")}
               <span className="w-2 h-2 rounded-full bg-white/80" />
             </a>
           </div>

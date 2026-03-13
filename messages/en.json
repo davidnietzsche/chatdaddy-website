@@ -1,0 +1,177 @@
+{
+  "common": {
+    "getStarted": "Get Started",
+    "bookDemo": "Book Demo",
+    "startForFree": "Start For Free",
+    "startFreeTrial": "Start Free Trial",
+    "learnMore": "Learn more",
+    "goHome": "Go Home",
+    "backToBlog": "Back to Blog",
+    "comingSoon": "Coming Soon",
+    "important": "IMPORTANT"
+  },
+  "header": {
+    "features": "Features",
+    "resources": "Resources",
+    "pricing": "Pricing",
+    "coExistence": "Co-Existence",
+    "toggleMenu": "Toggle menu",
+    "featureItems": {
+      "teamInbox": "Team Inbox",
+      "notification": "Notification",
+      "chatbot": "Chatbot",
+      "marketing": "Marketing",
+      "shop": "Shop",
+      "pay": "Pay",
+      "automation": "Automation",
+      "crm": "CRM"
+    },
+    "resourceItems": {
+      "successStories": "Success Stories",
+      "blogPosts": "Blog Posts",
+      "coExistence": "Co-Existence",
+      "waLinkGenerator": "WhatsApp Link Generator",
+      "roiCalculator": "ROI Calculator",
+      "helpCenter": "Help Center",
+      "apiDoc": "API Doc",
+      "serviceStatus": "Service Status"
+    }
+  },
+  "footer": {
+    "features": "Features",
+    "company": "Company",
+    "resources": "Resources",
+    "securityLegal": "Security & Legal",
+    "aboutUs": "About Us",
+    "careers": "Careers",
+    "partnerProgram": "Partner Program",
+    "pricing": "Pricing",
+    "supportPlan": "Support Plan",
+    "contactUs": "Contact Us",
+    "successStories": "Success Stories",
+    "blogPosts": "Blog Posts",
+    "coExistence": "Co-Existence",
+    "waLinkGenerator": "WhatsApp Link Generator",
+    "roiCalculator": "ROI Calculator",
+    "helpCenter": "Help Center",
+    "apiDoc": "API Doc",
+    "serviceStatus": "Service Status",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "dpsa": "DPSA",
+    "bookDemo": "Book Demo",
+    "copyright": "2026 Copyright \u00a9 TNT The Next Tech Ltd. All rights reserved."
+  },
+  "hero": {
+    "badge": "ChatDaddy",
+    "heading": "Your AI-Powered\nMessaging Platform",
+    "subtitle": "Streamline conversations across WhatsApp, Instagram, Facebook Messenger, TikTok, SMS, Email, and more \u2014 all in one intelligent platform built to grow your business.",
+    "socialProof": "Managing {dailyMessages} daily messages for {businesses} businesses"
+  },
+  "whyChatDaddy": {
+    "badge": "Why ChatDaddy?",
+    "heading": "Built for the full customer journey",
+    "subtitle": "From fast-moving startups to structured enterprises, ChatDaddy adapts to your team\u2019s real-world workflows, not the other way around.",
+    "cards": {
+      "growthPartner": {
+        "title": "Your Growth Partner",
+        "description": "We measure our success by yours. From onboarding to scaling, our team is here to help you unlock the full value of ChatDaddy."
+      },
+      "onePlatform": {
+        "title": "One platform for the entire customer journey",
+        "description": "From first touch to repeat purchase, ChatDaddy brings marketing, sales, and support into a single, streamlined workspace."
+      },
+      "scalable": {
+        "title": "Scalable, flexible, and easy to use",
+        "description": "Get started quickly, integrate with your favorite tools, and scale without adding complexity."
+      },
+      "proven": {
+        "title": "Proven Messaging Automation",
+        "description": "With millions of conversations managed daily, we\u2019ve built a platform that simplifies complexity so your team can focus on growth."
+      }
+    }
+  },
+  "keyFeatures": {
+    "badge": "Key Features",
+    "heading": "Build Around Your Growth",
+    "subtitle": "From attracting new prospects to retaining loyal customers, ChatDaddy equips your team with everything you need to grow \u2014 in one seamless platform.",
+    "acquireHeading": "From getting customers to converting leads\u2026",
+    "retainHeading": "to keeping customers and managing your growth",
+    "acquire": {
+      "marketing": {
+        "label": "Marketing",
+        "description": "Expand your reach effortlessly by targeting potential customers through smart broadcasts, click-to-WhatsApp ads, and QR entry points."
+      },
+      "shop": {
+        "label": "Shop",
+        "description": "Turn WhatsApp into a storefront. Showcase your catalog, take orders, and send payment links \u2014 all inside the chat."
+      },
+      "chatbot": {
+        "label": "Chatbot",
+        "description": "Engage visitors 24/7 with an AI-powered chatbot that answers questions, qualifies leads, and books appointments."
+      },
+      "pay": {
+        "label": "Pay",
+        "description": "Accept payments directly in WhatsApp. Generate payment links, send invoices, and track transactions seamlessly."
+      }
+    },
+    "retain": {
+      "teamInbox": {
+        "label": "Team Inbox",
+        "description": "Manage all conversations in one shared inbox. Assign chats, add notes, and collaborate with your team in real time."
+      },
+      "notification": {
+        "label": "Notification",
+        "description": "Stay on top of every message with smart alerts. Get notified by priority, assignment, or keyword \u2014 never miss a lead."
+      },
+      "automation": {
+        "label": "Automation",
+        "description": "Automate repetitive tasks with visual workflow builders. Set triggers, conditions, and actions without writing code."
+      },
+      "crm": {
+        "label": "CRM",
+        "description": "Track every customer interaction. Tag contacts, score leads, and build segments for targeted outreach."
+      }
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "This page doesn\u2019t exist or has been moved.",
+    "goHome": "Go Home"
+  },
+  "blog": {
+    "badge": "Blog",
+    "heading": "Tips, Guides & Updates",
+    "subtitle": "Expert insights on WhatsApp CRM, business automation, chatbot strategies, and messaging best practices from the ChatDaddy team.",
+    "emptyTitle": "Coming Soon",
+    "emptyMessage": "We are working on insightful guides about WhatsApp business automation, chatbot strategies, and CRM best practices. Check back soon!",
+    "backToHome": "Back to Home",
+    "relatedArticles": "Related Articles",
+    "updatedOn": "Updated {date}"
+  },
+  "integration": {
+    "badge": "50+ Integrations",
+    "heading": "Connect WhatsApp with Your Favorite Tools",
+    "subtitle": "Seamlessly integrate ChatDaddy with your CRM, e-commerce platform, helpdesk, and more. Automate workflows and keep everything in sync.",
+    "all": "All",
+    "crm": "CRM",
+    "ecommerce": "E-Commerce",
+    "messaging": "Messaging",
+    "productivity": "Productivity",
+    "marketing": "Marketing",
+    "dontSeeYourTool": "Don\u2019t See Your Tool?",
+    "dontSeeDescription": "ChatDaddy connects to thousands of apps through Zapier and Make. We also build custom integrations for enterprise customers.",
+    "requestIntegration": "Request an Integration"
+  },
+  "pricing": {
+    "heading": "Simple, transparent pricing",
+    "subtitle": "Start free, scale as you grow. No hidden fees.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "perMonth": "/month",
+    "getStarted": "Get Started",
+    "mostPopular": "Most Popular",
+    "enterprise": "Enterprise",
+    "contactSales": "Contact Sales"
+  }
+}

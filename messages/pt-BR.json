@@ -1,0 +1,176 @@
+{
+  "common": {
+    "getStarted": "Comece Agora",
+    "bookDemo": "Agendar Demo",
+    "startForFree": "Comece Grátis",
+    "startFreeTrial": "Teste Grátis",
+    "learnMore": "Saiba mais",
+    "goHome": "Ir para o Início",
+    "backToBlog": "Voltar ao Blog",
+    "comingSoon": "Em Breve",
+    "important": "IMPORTANTE"
+  },
+  "header": {
+    "features": "Funcionalidades",
+    "resources": "Recursos",
+    "pricing": "Preços",
+    "coExistence": "Coexistência",
+    "toggleMenu": "Alternar menu",
+    "featureItems": {
+      "teamInbox": "Caixa de Entrada da Equipe",
+      "notification": "Notificações",
+      "chatbot": "Chatbot",
+      "marketing": "Marketing",
+      "shop": "Loja",
+      "pay": "Pagamento",
+      "automation": "Automação",
+      "crm": "CRM"
+    },
+    "resourceItems": {
+      "successStories": "Casos de Sucesso",
+      "blogPosts": "Blog",
+      "coExistence": "Coexistência",
+      "waLinkGenerator": "Gerador de Link do WhatsApp",
+      "roiCalculator": "Calculadora de ROI",
+      "helpCenter": "Central de Ajuda",
+      "apiDoc": "Documentação da API",
+      "serviceStatus": "Status do Serviço"
+    }
+  },
+  "footer": {
+    "features": "Funcionalidades",
+    "company": "Empresa",
+    "resources": "Recursos",
+    "securityLegal": "Segurança e Jurídico",
+    "aboutUs": "Sobre Nós",
+    "careers": "Carreiras",
+    "partnerProgram": "Programa de Parceiros",
+    "pricing": "Preços",
+    "supportPlan": "Plano de Suporte",
+    "contactUs": "Fale Conosco",
+    "successStories": "Casos de Sucesso",
+    "blogPosts": "Blog",
+    "coExistence": "Coexistência",
+    "waLinkGenerator": "Gerador de Link do WhatsApp",
+    "roiCalculator": "Calculadora de ROI",
+    "helpCenter": "Central de Ajuda",
+    "apiDoc": "Documentação da API",
+    "serviceStatus": "Status do Serviço",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfService": "Termos de Serviço",
+    "dpsa": "DPSA",
+    "copyright": "2026 Copyright © TNT The Next Tech Ltd. Todos os direitos reservados."
+  },
+  "hero": {
+    "badge": "ChatDaddy",
+    "heading": "Sua Plataforma de\nMensagens com IA",
+    "subtitle": "Centralize conversas no WhatsApp, Instagram, Facebook Messenger, TikTok, SMS, E-mail e muito mais — tudo em uma plataforma inteligente feita para impulsionar o seu negócio.",
+    "socialProof": "Gerenciando <strong>{dailyMessages}</strong> mensagens diárias para <strong>{businesses}</strong> empresas"
+  },
+  "whyChatDaddy": {
+    "badge": "Por que o ChatDaddy?",
+    "heading": "Feito para toda a jornada do cliente",
+    "subtitle": "De startups ágeis a grandes empresas, o ChatDaddy se adapta aos fluxos de trabalho reais da sua equipe — e não o contrário.",
+    "cards": {
+      "growthPartner": {
+        "title": "Seu Parceiro de Crescimento",
+        "description": "Medimos o nosso sucesso pelo seu. Da implementação à expansão, nossa equipe está aqui para ajudar você a extrair o máximo valor do ChatDaddy."
+      },
+      "onePlatform": {
+        "title": "Uma plataforma para toda a jornada do cliente",
+        "description": "Do primeiro contato à recompra, o ChatDaddy reúne marketing, vendas e suporte em um único espaço de trabalho integrado."
+      },
+      "scalable": {
+        "title": "Escalável, flexível e fácil de usar",
+        "description": "Comece rapidamente, integre com suas ferramentas favoritas e escale sem adicionar complexidade."
+      },
+      "proven": {
+        "title": "Automação de Mensagens Comprovada",
+        "description": "Com milhões de conversas gerenciadas diariamente, construímos uma plataforma que simplifica a complexidade para que sua equipe possa focar no crescimento."
+      }
+    }
+  },
+  "keyFeatures": {
+    "badge": "Funcionalidades",
+    "heading": "Cresça do Seu Jeito",
+    "subtitle": "Da captação de novos leads à fidelização de clientes, o ChatDaddy equipa sua equipe com tudo o que você precisa para crescer — em uma única plataforma integrada.",
+    "acquireHeading": "Da captação de clientes à conversão de leads…",
+    "retainHeading": "à retenção de clientes e gestão do seu crescimento",
+    "acquire": {
+      "marketing": {
+        "label": "Marketing",
+        "description": "Amplie seu alcance sem esforço, atingindo potenciais clientes por meio de envios em massa inteligentes, anúncios click-to-WhatsApp e pontos de entrada via QR Code."
+      },
+      "shop": {
+        "label": "Loja",
+        "description": "Transforme o WhatsApp em uma vitrine. Exiba seu catálogo, receba pedidos e envie links de pagamento — tudo dentro do chat."
+      },
+      "chatbot": {
+        "label": "Chatbot",
+        "description": "Atenda visitantes 24/7 com um chatbot com IA que responde perguntas, qualifica leads e agenda reuniões."
+      },
+      "pay": {
+        "label": "Pagamento",
+        "description": "Receba pagamentos diretamente no WhatsApp. Gere links de pagamento, envie cobranças e acompanhe transações de forma integrada."
+      }
+    },
+    "retain": {
+      "teamInbox": {
+        "label": "Caixa de Entrada da Equipe",
+        "description": "Gerencie todas as conversas em uma caixa de entrada compartilhada. Atribua chats, adicione notas e colabore com sua equipe em tempo real."
+      },
+      "notification": {
+        "label": "Notificações",
+        "description": "Fique por dentro de cada mensagem com alertas inteligentes. Receba notificações por prioridade, atribuição ou palavra-chave — nunca perca um lead."
+      },
+      "automation": {
+        "label": "Automação",
+        "description": "Automatize tarefas repetitivas com construtores visuais de fluxos. Defina gatilhos, condições e ações sem escrever código."
+      },
+      "crm": {
+        "label": "CRM",
+        "description": "Acompanhe cada interação com o cliente. Categorize contatos, pontue leads e crie segmentos para campanhas direcionadas."
+      }
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Esta página não existe ou foi movida.",
+    "goHome": "Ir para o Início"
+  },
+  "blog": {
+    "badge": "Blog",
+    "heading": "Dicas, Guias e Novidades",
+    "subtitle": "Insights de especialistas sobre WhatsApp CRM, automação empresarial, estratégias de chatbot e melhores práticas de mensagens da equipe ChatDaddy.",
+    "emptyTitle": "Em Breve",
+    "emptyMessage": "Estamos preparando guias sobre automação empresarial no WhatsApp, estratégias de chatbot e melhores práticas de CRM. Volte em breve!",
+    "backToHome": "Voltar ao Início",
+    "relatedArticles": "Artigos Relacionados",
+    "updatedOn": "Atualizado em {date}"
+  },
+  "integration": {
+    "badge": "Mais de 50 Integrações",
+    "heading": "Conecte o WhatsApp às Suas Ferramentas Favoritas",
+    "subtitle": "Integre o ChatDaddy ao seu CRM, plataforma de e-commerce, helpdesk e muito mais. Automatize fluxos de trabalho e mantenha tudo sincronizado.",
+    "all": "Todos",
+    "crm": "CRM",
+    "ecommerce": "E-Commerce",
+    "messaging": "Mensagens",
+    "productivity": "Produtividade",
+    "marketing": "Marketing",
+    "dontSeeYourTool": "Não encontrou sua ferramenta?",
+    "dontSeeDescription": "O ChatDaddy se conecta a milhares de aplicativos por meio do Zapier e Make. Também desenvolvemos integrações personalizadas para clientes corporativos.",
+    "requestIntegration": "Solicitar uma Integração"
+  },
+  "pricing": {
+    "heading": "Preços simples e transparentes",
+    "subtitle": "Comece grátis, escale conforme cresce. Sem taxas ocultas.",
+    "monthly": "Mensal",
+    "yearly": "Anual",
+    "perMonth": "/mês",
+    "getStarted": "Comece Agora",
+    "mostPopular": "Mais Popular",
+    "enterprise": "Empresarial",
+    "contactSales": "Fale com Vendas"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "common": {
+    "getStarted": "Mulai Sekarang",
+    "bookDemo": "Jadwalkan Demo",
+    "startForFree": "Mulai Gratis",
+    "startFreeTrial": "Coba Gratis",
+    "learnMore": "Pelajari lebih lanjut",
+    "goHome": "Ke Beranda",
+    "backToBlog": "Kembali ke Blog",
+    "comingSoon": "Segera Hadir",
+    "important": "PENTING"
+  },
+  "header": {
+    "features": "Fitur",
+    "resources": "Sumber Daya",
+    "pricing": "Harga",
+    "coExistence": "Co-Existence",
+    "toggleMenu": "Buka/tutup menu",
+    "featureItems": {
+      "teamInbox": "Kotak Masuk Tim",
+      "notification": "Notifikasi",
+      "chatbot": "Chatbot",
+      "marketing": "Pemasaran",
+      "shop": "Toko",
+      "pay": "Pembayaran",
+      "automation": "Otomasi",
+      "crm": "CRM"
+    },
+    "resourceItems": {
+      "successStories": "Kisah Sukses",
+      "blogPosts": "Artikel Blog",
+      "coExistence": "Co-Existence",
+      "waLinkGenerator": "Generator Tautan WhatsApp",
+      "roiCalculator": "Kalkulator ROI",
+      "helpCenter": "Pusat Bantuan",
+      "apiDoc": "Dokumentasi API",
+      "serviceStatus": "Status Layanan"
+    }
+  },
+  "footer": {
+    "features": "Fitur",
+    "company": "Perusahaan",
+    "resources": "Sumber Daya",
+    "securityLegal": "Keamanan & Hukum",
+    "aboutUs": "Tentang Kami",
+    "careers": "Karir",
+    "partnerProgram": "Program Mitra",
+    "pricing": "Harga",
+    "supportPlan": "Paket Dukungan",
+    "contactUs": "Hubungi Kami",
+    "successStories": "Kisah Sukses",
+    "blogPosts": "Artikel Blog",
+    "coExistence": "Co-Existence",
+    "waLinkGenerator": "Generator Tautan WhatsApp",
+    "roiCalculator": "Kalkulator ROI",
+    "helpCenter": "Pusat Bantuan",
+    "apiDoc": "Dokumentasi API",
+    "serviceStatus": "Status Layanan",
+    "privacyPolicy": "Kebijakan Privasi",
+    "termsOfService": "Ketentuan Layanan",
+    "dpsa": "DPSA",
+    "copyright": "2026 Hak Cipta \u00a9 TNT The Next Tech Ltd. Semua hak dilindungi."
+  },
+  "hero": {
+    "badge": "ChatDaddy",
+    "heading": "Platform Pesan\nBerbasis AI Anda",
+    "subtitle": "Kelola percakapan di WhatsApp, Instagram, Facebook Messenger, TikTok, SMS, Email, dan lainnya \u2014 semua dalam satu platform cerdas yang dirancang untuk mengembangkan bisnis Anda.",
+    "socialProof": "Mengelola <strong>{dailyMessages}</strong> pesan harian untuk <strong>{businesses}</strong> bisnis"
+  },
+  "whyChatDaddy": {
+    "badge": "Mengapa ChatDaddy?",
+    "heading": "Dirancang untuk seluruh perjalanan pelanggan",
+    "subtitle": "Dari startup yang bergerak cepat hingga perusahaan besar, ChatDaddy menyesuaikan dengan alur kerja nyata tim Anda, bukan sebaliknya.",
+    "cards": {
+      "growthPartner": {
+        "title": "Mitra Pertumbuhan Anda",
+        "description": "Kesuksesan kami diukur dari kesuksesan Anda. Dari onboarding hingga scaling, tim kami siap membantu Anda memaksimalkan nilai penuh ChatDaddy."
+      },
+      "onePlatform": {
+        "title": "Satu platform untuk seluruh perjalanan pelanggan",
+        "description": "Dari kontak pertama hingga pembelian berulang, ChatDaddy menyatukan pemasaran, penjualan, dan dukungan dalam satu ruang kerja yang efisien."
+      },
+      "scalable": {
+        "title": "Skalabel, fleksibel, dan mudah digunakan",
+        "description": "Mulai dengan cepat, integrasikan dengan alat favorit Anda, dan berkembang tanpa menambah kompleksitas."
+      },
+      "proven": {
+        "title": "Otomasi Pesan yang Terbukti",
+        "description": "Dengan jutaan percakapan yang dikelola setiap hari, kami telah membangun platform yang menyederhanakan kompleksitas agar tim Anda dapat fokus pada pertumbuhan."
+      }
+    }
+  },
+  "keyFeatures": {
+    "badge": "Fitur Utama",
+    "heading": "Dibangun untuk Pertumbuhan Anda",
+    "subtitle": "Dari menarik prospek baru hingga mempertahankan pelanggan setia, ChatDaddy melengkapi tim Anda dengan semua yang dibutuhkan untuk berkembang \u2014 dalam satu platform terpadu.",
+    "acquireHeading": "Dari mendapatkan pelanggan hingga mengkonversi prospek\u2026",
+    "retainHeading": "hingga mempertahankan pelanggan dan mengelola pertumbuhan Anda",
+    "acquire": {
+      "marketing": {
+        "label": "Pemasaran",
+        "description": "Perluas jangkauan Anda dengan mudah melalui broadcast cerdas, iklan click-to-WhatsApp, dan titik masuk QR yang ditargetkan."
+      },
+      "shop": {
+        "label": "Toko",
+        "description": "Ubah WhatsApp menjadi etalase toko. Tampilkan katalog, terima pesanan, dan kirim tautan pembayaran \u2014 semua di dalam chat."
+      },
+      "chatbot": {
+        "label": "Chatbot",
+        "description": "Layani pengunjung 24/7 dengan chatbot berbasis AI yang menjawab pertanyaan, mengkualifikasi prospek, dan menjadwalkan pertemuan."
+      },
+      "pay": {
+        "label": "Pembayaran",
+        "description": "Terima pembayaran langsung di WhatsApp. Buat tautan pembayaran, kirim faktur, dan lacak transaksi dengan mudah."
+      }
+    },
+    "retain": {
+      "teamInbox": {
+        "label": "Kotak Masuk Tim",
+        "description": "Kelola semua percakapan dalam satu kotak masuk bersama. Tugaskan chat, tambahkan catatan, dan berkolaborasi dengan tim secara real time."
+      },
+      "notification": {
+        "label": "Notifikasi",
+        "description": "Pantau setiap pesan dengan notifikasi cerdas. Dapatkan pemberitahuan berdasarkan prioritas, penugasan, atau kata kunci \u2014 jangan sampai kehilangan prospek."
+      },
+      "automation": {
+        "label": "Otomasi",
+        "description": "Otomatiskan tugas berulang dengan pembuat alur kerja visual. Atur pemicu, kondisi, dan aksi tanpa menulis kode."
+      },
+      "crm": {
+        "label": "CRM",
+        "description": "Lacak setiap interaksi pelanggan. Tandai kontak, skor prospek, dan buat segmen untuk penjangkauan yang tertarget."
+      }
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Halaman ini tidak ada atau telah dipindahkan.",
+    "goHome": "Ke Beranda"
+  },
+  "blog": {
+    "badge": "Blog",
+    "heading": "Tips, Panduan & Pembaruan",
+    "subtitle": "Wawasan ahli tentang WhatsApp CRM, otomasi bisnis, strategi chatbot, dan praktik terbaik perpesanan dari tim ChatDaddy.",
+    "emptyTitle": "Segera Hadir",
+    "emptyMessage": "Kami sedang menyiapkan panduan mendalam tentang otomasi bisnis WhatsApp, strategi chatbot, dan praktik terbaik CRM. Kunjungi lagi nanti!",
+    "backToHome": "Kembali ke Beranda",
+    "relatedArticles": "Artikel Terkait",
+    "updatedOn": "Diperbarui {date}"
+  },
+  "integration": {
+    "badge": "50+ Integrasi",
+    "heading": "Hubungkan WhatsApp dengan Alat Favorit Anda",
+    "subtitle": "Integrasikan ChatDaddy dengan CRM, platform e-commerce, helpdesk, dan lainnya secara mulus. Otomatiskan alur kerja dan jaga semuanya tetap sinkron.",
+    "all": "Semua",
+    "crm": "CRM",
+    "ecommerce": "E-Commerce",
+    "messaging": "Perpesanan",
+    "productivity": "Produktivitas",
+    "marketing": "Pemasaran",
+    "dontSeeYourTool": "Tidak Menemukan Alat Anda?",
+    "dontSeeDescription": "ChatDaddy terhubung ke ribuan aplikasi melalui Zapier dan Make. Kami juga membangun integrasi khusus untuk pelanggan enterprise.",
+    "requestIntegration": "Minta Integrasi"
+  },
+  "pricing": {
+    "heading": "Harga sederhana dan transparan",
+    "subtitle": "Mulai gratis, tingkatkan seiring pertumbuhan Anda. Tanpa biaya tersembunyi.",
+    "monthly": "Bulanan",
+    "yearly": "Tahunan",
+    "perMonth": "/bulan",
+    "getStarted": "Mulai Sekarang",
+    "mostPopular": "Paling Populer",
+    "enterprise": "Enterprise",
+    "contactSales": "Hubungi Sales"
+  }
+}

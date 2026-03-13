@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
 /* Simple line icons matching Framer's style */
 function GrowthIcon() {
@@ -40,34 +41,17 @@ function AutomationIcon() {
   );
 }
 
-const features = [
-  {
-    Icon: GrowthIcon,
-    title: "Your Growth Partner",
-    description:
-      "We measure our success by yours. From onboarding to scaling, our team is here to help you unlock the full value of ChatDaddy.",
-  },
-  {
-    Icon: PlatformIcon,
-    title: "One platform for the entire customer journey",
-    description:
-      "From first touch to repeat purchase, ChatDaddy brings marketing, sales, and support into a single, streamlined workspace.",
-  },
-  {
-    Icon: ScalableIcon,
-    title: "Scalable, flexible, and easy to use",
-    description:
-      "Get started quickly, integrate with your favorite tools, and scale without adding complexity.",
-  },
-  {
-    Icon: AutomationIcon,
-    title: "Proven Messaging Automation",
-    description:
-      "With millions of conversations managed daily, we\u2019ve built a platform that simplifies complexity so your team can focus on growth.",
-  },
-];
+const cardKeys = [
+  { key: "growthPartner", Icon: GrowthIcon },
+  { key: "onePlatform", Icon: PlatformIcon },
+  { key: "scalable", Icon: ScalableIcon },
+  { key: "proven", Icon: AutomationIcon },
+] as const;
 
-export default function WhyChatDaddy() {
+export default async function WhyChatDaddy() {
+  const t = await getTranslations("whyChatDaddy");
+  const tc = await getTranslations("common");
+
   return (
     <section className="w-full bg-[#0f5bff] py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -81,46 +65,44 @@ export default function WhyChatDaddy() {
                 fill="white"
               />
             </svg>
-            Why ChatDaddy?
+            {t("badge")}
           </span>
 
           {/* Heading */}
           <h2 className="mt-7 font-heading text-[36px] font-bold leading-[1.12] tracking-[-0.02em] text-white sm:text-[48px] lg:text-[56px]">
-            Built for the full customer journey
+            {t("heading")}
           </h2>
 
           {/* Subtitle */}
           <p className="mt-5 max-w-[600px] text-[17px] leading-[1.6] text-white/75">
-            From fast-moving startups to structured enterprises, ChatDaddy
-            adapts to your team&apos;s real-world workflows, not the other way
-            around.
+            {t("subtitle")}
           </p>
 
           {/* CTA Button */}
-          <Link
+          <a
             href="https://app.chatdaddy.tech/SignUp?referralCode=Website"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3 text-[15px] font-semibold text-[#0f5bff] shadow-[0_2px_12px_rgba(0,0,0,0.1)] transition-all hover:shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
           >
-            Start Free Trial
+            {tc("startFreeTrial")}
             <span className="inline-block h-2 w-2 rounded-full bg-[#0f5bff]/60" />
-          </Link>
+          </a>
         </div>
 
-        {/* Cards — 3-column staggered grid matching Framer */}
+        {/* Cards */}
         <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, i) => {
-            const { Icon } = feature;
-            // First card spans full height on large screens
+          {cardKeys.map((card, i) => {
+            const { Icon } = card;
             const isFirst = i === 0;
             const isLast = i === 3;
             return (
               <div
-                key={feature.title}
+                key={card.key}
                 className={`group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.06] backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.10] ${
                   isFirst ? "sm:row-span-2 lg:row-span-2" : ""
                 } ${isLast ? "sm:col-span-2 lg:col-span-2" : ""}`}
               >
-                {/* Dotted grid pattern overlay */}
                 <div
                   className="pointer-events-none absolute inset-0 opacity-[0.08]"
                   style={{
@@ -131,19 +113,16 @@ export default function WhyChatDaddy() {
                 />
 
                 <div className={`relative flex h-full flex-col justify-end p-8 ${isFirst ? "pt-48 sm:pt-0" : "pt-12"}`}>
-                  {/* Icon */}
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
                     <Icon />
                   </div>
 
-                  {/* Title */}
                   <h3 className="text-[20px] font-bold leading-tight text-white">
-                    {feature.title}
+                    {t(`cards.${card.key}.title`)}
                   </h3>
 
-                  {/* Description */}
                   <p className="mt-3 text-[14px] leading-[1.6] text-white/65">
-                    {feature.description}
+                    {t(`cards.${card.key}.description`)}
                   </p>
                 </div>
               </div>

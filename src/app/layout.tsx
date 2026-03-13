@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, DM_Sans } from "next/font/google";
+import { getLocale } from "next-intl/server";
 import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 import "@/styles/globals.css";
 
@@ -55,13 +56,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
+
   return (
-    <html lang="en" className={`${inter.variable} ${dmSans.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${dmSans.variable}`}>
       <head>
         {/* Preconnect to Sanity CDN for faster image loads */}
         <link rel="preconnect" href="https://cdn.sanity.io" />

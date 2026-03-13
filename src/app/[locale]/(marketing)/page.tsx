@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { client } from "@/sanity/lib/client";
 import { homePageQuery } from "@/sanity/lib/queries";
 import { buildMetadata } from "@/lib/metadata";
@@ -19,7 +20,13 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default async function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const page = await client.fetch(homePageQuery);
 
   // Extract FAQs from page sections for structured data

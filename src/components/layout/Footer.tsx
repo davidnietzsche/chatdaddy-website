@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
 /* ------------------------------------------------------------------ */
@@ -9,51 +10,46 @@ const BOOK_DEMO_URL =
   "https://chatdaddy-consultation.paperform.co/?utm_source=Website&utm_campaign=Website";
 
 const featuresLinks = [
-  { label: "Team Inbox", href: "/features/team-inbox" },
-  { label: "Notification", href: "/features/notification" },
-  { label: "Chatbot", href: "/features/chatbot" },
-  { label: "Marketing", href: "/features/marketing" },
-  { label: "Shop", href: "/features/shop" },
-  { label: "Pay", href: "/features/pay" },
-  { label: "Automation", href: "/features/automation" },
-  { label: "CRM", href: "/features/crm" },
-];
+  { key: "teamInbox", href: "/features/team-inbox" },
+  { key: "notification", href: "/features/notification" },
+  { key: "chatbot", href: "/features/chatbot" },
+  { key: "marketing", href: "/features/marketing" },
+  { key: "shop", href: "/features/shop" },
+  { key: "pay", href: "/features/pay" },
+  { key: "automation", href: "/features/automation" },
+  { key: "crm", href: "/features/crm" },
+] as const;
 
-const companyLinks: { label: string; href: string; external?: boolean }[] = [
-  { label: "About Us", href: "/our-story" },
-  { label: "Careers", href: "/careers" },
-  { label: "Partner Program", href: "/join-partnership" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Support Plan", href: "/support-plan" },
-  { label: "Book Demo", href: BOOK_DEMO_URL, external: true },
-  { label: "Contact Us", href: "/contact-us" },
-];
+const companyKeys = [
+  { key: "aboutUs", href: "/our-story" },
+  { key: "careers", href: "/careers" },
+  { key: "partnerProgram", href: "/join-partnership" },
+  { key: "pricing", href: "/pricing" },
+  { key: "supportPlan", href: "/support-plan" },
+  { key: "bookDemo", href: BOOK_DEMO_URL, external: true },
+  { key: "contactUs", href: "/contact-us" },
+] as const;
 
-const resourcesLinks: {
-  label: string;
-  href: string;
-  external?: boolean;
-  badge?: string;
-}[] = [
-  { label: "Success Stories", href: "/success-studies" },
-  { label: "Blog Posts", href: "/blog" },
-  { label: "Co-Existence", href: "/whatsapp-coexistence", badge: "IMPORTANT" },
-  { label: "WhatsApp Link Generator", href: "/resources/whatsapp-link-generator" },
-  { label: "ROI Calculator", href: "/resources/roi-calculator" },
-  { label: "Help Center", href: "https://help.chatdaddy.tech/", external: true },
+const resourceKeys = [
+  { key: "successStories", href: "/success-studies" },
+  { key: "blogPosts", href: "/blog" },
+  { key: "coExistence", href: "/whatsapp-coexistence", badge: true },
+  { key: "waLinkGenerator", href: "/resources/whatsapp-link-generator" },
+  { key: "roiCalculator", href: "/resources/roi-calculator" },
+  { key: "helpCenter", href: "https://help.chatdaddy.tech/", external: true },
   {
-    label: "API Doc",
+    key: "apiDoc",
     href: "https://chatdaddy.stoplight.io/docs/openapi/repos/chatdaddy-service-auth/openapi.yaml",
     external: true,
   },
-  { label: "Service Status", href: "https://status.chatdaddy.tech/", external: true },
-];
+  { key: "serviceStatus", href: "https://status.chatdaddy.tech/", external: true },
+] as const;
 
-const legalLinks = [
-  { label: "Privacy Policy", href: "/terms/privacy-policy" },
-  { label: "Terms of Service", href: "/terms/terms-of-use" },
-  { label: "DPSA", href: "/terms/data-processing-and-security-addendum" },
-];
+const legalKeys = [
+  { key: "privacyPolicy", href: "/terms/privacy-policy" },
+  { key: "termsOfService", href: "/terms/terms-of-use" },
+  { key: "dpsa", href: "/terms/data-processing-and-security-addendum" },
+] as const;
 
 /* ------------------------------------------------------------------ */
 /*  Social Icons                                                       */
@@ -125,7 +121,34 @@ function FooterLinkColumn({
 /*  Footer                                                             */
 /* ------------------------------------------------------------------ */
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations("footer");
+  const th = await getTranslations("header");
+  const tc = await getTranslations("common");
+
+  const featuresLinksData = featuresLinks.map((l) => ({
+    label: th(`featureItems.${l.key}`),
+    href: l.href,
+  }));
+
+  const companyLinksData = companyKeys.map((l) => ({
+    label: t(l.key as any),
+    href: l.href,
+    external: "external" in l ? l.external : undefined,
+  }));
+
+  const resourceLinksData = resourceKeys.map((l) => ({
+    label: t(l.key as any),
+    href: l.href,
+    external: "external" in l ? l.external : undefined,
+    badge: "badge" in l && l.badge ? tc("important") : undefined,
+  }));
+
+  const legalLinksData = legalKeys.map((l) => ({
+    label: t(l.key as any),
+    href: l.href,
+  }));
+
   return (
     <footer className="bg-[#111318]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
@@ -147,10 +170,10 @@ export default function Footer() {
 
           {/* Right: Link columns */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-14 flex-1">
-            <FooterLinkColumn title="Features" links={featuresLinks} />
-            <FooterLinkColumn title="Company" links={companyLinks} />
-            <FooterLinkColumn title="Resources" links={resourcesLinks} />
-            <FooterLinkColumn title="Security & Legal" links={legalLinks} />
+            <FooterLinkColumn title={t("features")} links={featuresLinksData} />
+            <FooterLinkColumn title={t("company")} links={companyLinksData} />
+            <FooterLinkColumn title={t("resources")} links={resourceLinksData} />
+            <FooterLinkColumn title={t("securityLegal")} links={legalLinksData} />
           </div>
         </div>
 
@@ -158,7 +181,7 @@ export default function Footer() {
         <div className="mt-16 border-t border-white/[0.08] pt-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-[13px] text-white/30">
-              2026 Copyright &copy; TNT The Next Tech Ltd. All rights reserved.
+              {t("copyright")}
             </p>
 
             {/* Social icons */}
