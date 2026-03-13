@@ -6,9 +6,11 @@ export const featurePages: Record<string, FeaturePageData> = {
     headline: "Collaborate Seamlessly Across Every Channel",
     subtitle:
       "Unify customer support, sales, and marketing in one inbox. Manage conversations across WhatsApp, Facebook Messenger, Instagram, Email, and more — without switching devices or losing context.",
+    heroImage: "/images/framer/features-team-inbox-hero.png",
     sections: [
       {
         title: "Easy Collaboration",
+        image: "/images/framer/features-team-inbox-illustration.svg",
         description:
           "Share a single inbox across teammates. Assign chats, stay organized, and resolve issues faster. From one WhatsApp number to multiple platforms, ChatDaddy's Team Inbox makes teamwork effortless.",
         bullets: [
@@ -20,6 +22,7 @@ export const featurePages: Record<string, FeaturePageData> = {
       },
       {
         title: "Multichannel Support",
+        image: "/images/framer/features-team-inbox-channels-strip.png",
         description:
           "Manage all your customer conversations — whether on WhatsApp, Facebook Messenger, Email, or SMS — in one place. No more switching between apps.",
         bullets: [
@@ -42,6 +45,7 @@ export const featurePages: Record<string, FeaturePageData> = {
       },
       {
         title: "Connect With Your Apps",
+        image: "/images/framer/features-team-inbox-integrations-strip.png",
         description:
           "Integrate with your favorite tools to maximize efficiency and scale your workflow. Connect with Shopify, HubSpot, Google Sheets, and more.",
         bullets: [
@@ -153,9 +157,11 @@ export const featurePages: Record<string, FeaturePageData> = {
     headline: "Automate Conversations With 24/7 Chatbots",
     subtitle:
       "Automate conversations across WhatsApp, Facebook Messenger, Email, SMS, and more. Set up a chatbot that responds instantly — your 24/7 customer service agent.",
+    heroImage: "/images/framer/features-chatbot-hero.png",
     sections: [
       {
         title: "Auto Tagging for CRM",
+        image: "/images/framer/features-chatbot-capability-1.png",
         description:
           "Classify and route customers automatically. Add tags, assign to teammates, and keep your CRM organized without manual work. Save hours of manual data entry every day.",
         bullets: [
@@ -167,6 +173,7 @@ export const featurePages: Record<string, FeaturePageData> = {
       },
       {
         title: "Keyword-Based Replies",
+        image: "/images/framer/features-chatbot-capability-2.png",
         description:
           "Automate answers to frequently asked questions. Free up your team while the bot handles repetitive queries in seconds, letting agents focus on complex issues.",
         bullets: [
@@ -178,6 +185,7 @@ export const featurePages: Record<string, FeaturePageData> = {
       },
       {
         title: "24/7 Auto Reply",
+        image: "/images/framer/features-chatbot-illustration.svg",
         description:
           "Stay responsive even when your team is offline. Bots can start conversations, collect details, and qualify leads around the clock — never miss an opportunity.",
         bullets: [
@@ -229,9 +237,11 @@ export const featurePages: Record<string, FeaturePageData> = {
     headline: "Scale Your Campaigns With Personalized Broadcasts",
     subtitle:
       "Reach thousands of customers with personalized promotions and automated campaigns across WhatsApp, Messenger, Email, SMS, and more. Strengthen relationships, increase repeat purchases, and grow sales — all with one click.",
+    heroImage: "/images/framer/features-marketing-hero.png",
     sections: [
       {
         title: "Increase Repeat Purchases",
+        image: "/images/framer/features-marketing-capability-1.png",
         description:
           "Target customers based on purchase history to encourage repeat orders. Keep loyal buyers engaged and coming back for more with personalized recommendations.",
         bullets: [
@@ -254,6 +264,7 @@ export const featurePages: Record<string, FeaturePageData> = {
       },
       {
         title: "Personalized Broadcasts",
+        image: "/images/framer/features-marketing-capability-2.png",
         description:
           "Send thousands of tailored messages in a single click. Import contacts, customize content, and deliver unique customer experiences at scale.",
         bullets: [
@@ -305,9 +316,11 @@ export const featurePages: Record<string, FeaturePageData> = {
     headline: "Boost Sales with a Customized Shopping Experience",
     subtitle:
       "Create a storefront inside WhatsApp where customers can browse products, place orders, and pay securely — all without leaving the chat.",
+    heroImage: "/images/framer/features-shop-hero.png",
     sections: [
       {
         title: "Sell Directly in Chat",
+        image: "/images/framer/features-shop-capability-1.png",
         description:
           "List your products for free and let customers shop without switching apps. Create a complete storefront inside WhatsApp with product images, descriptions, and pricing.",
         bullets: [
@@ -319,6 +332,7 @@ export const featurePages: Record<string, FeaturePageData> = {
       },
       {
         title: "One-Click Sync",
+        image: "/images/framer/features-shop-capability-2.png",
         description:
           "Already selling online? Import your products from other platforms and extend your reach into WhatsApp. Sync inventory automatically from Shopify, WooCommerce, and more.",
         bullets: [
@@ -330,6 +344,7 @@ export const featurePages: Record<string, FeaturePageData> = {
       },
       {
         title: "Get Paid & Manage Orders",
+        image: "/images/framer/features-shop-capability-3.png",
         description:
           "Accept secure payments, track sales, and fulfill orders — all from one dashboard. Streamlined order management from checkout to delivery.",
         bullets: [
@@ -376,6 +391,7 @@ export const featurePages: Record<string, FeaturePageData> = {
     headline: "Get Paid Instantly Without Leaving the Chat",
     subtitle:
       "Accept payments directly in WhatsApp. Create payment links, connect with 200+ gateways, and manage transactions in one dashboard.",
+    heroImage: "/images/framer/features-pay-hero.png",
     sections: [
       {
         title: "Get Paid in Chat",
@@ -390,6 +406,7 @@ export const featurePages: Record<string, FeaturePageData> = {
       },
       {
         title: "Connect With 200+ Gateways",
+        image: "/images/framer/features-pay-gateways-strip.png",
         description:
           "Accept global payments with hundreds of options — giving your customers flexibility wherever they are. From credit cards to local payment methods.",
         bullets: [
@@ -447,9 +464,11 @@ export const featurePages: Record<string, FeaturePageData> = {
     headline: "Automate Workflows With a Visual Flow Builder",
     subtitle:
       "Save hours every week by automating repetitive tasks. Build flows with drag-and-drop simplicity, connect your favorite apps, and access ready-made templates from the community.",
+    heroImage: "/images/framer/features-automation-illustration.svg",
     sections: [
       {
         title: "Visual Flow Builder",
+        image: "/images/framer/features-automation-flow-builder.png",
         description:
           "Design automation with a simple drag-and-drop builder. Map out your workflows without writing a single line of code — from simple auto-replies to complex multi-step flows.",
         bullets: [
@@ -523,6 +542,7 @@ export const featurePages: Record<string, FeaturePageData> = {
     headline: "Organize Customer Data Right Inside Your Inbox",
     subtitle:
       "Manage relationships directly from chat. Track leads, tag customers, and move deals across a visual Kanban board — so your entire team stays aligned.",
+    heroImage: "/images/framer/features-crm-hero.png",
     sections: [
       {
         title: "Centralized Contact Profiles",
@@ -537,6 +557,7 @@ export const featurePages: Record<string, FeaturePageData> = {
       },
       {
         title: "Kanban Board View",
+        image: "/images/framer/features-crm-kanban.png",
         description:
           "Visualize your pipeline in stages. Drag and drop leads across columns to track progress and close deals faster with a visual, intuitive interface.",
         bullets: [
@@ -548,6 +569,7 @@ export const featurePages: Record<string, FeaturePageData> = {
       },
       {
         title: "Smart Tagging & Segmentation",
+        image: "/images/framer/features-crm-tagging.png",
         description:
           "Categorize contacts by behavior, interest, or status. Easily target the right audience for follow-ups or campaigns with powerful segmentation tools.",
         bullets: [
@@ -559,6 +581,7 @@ export const featurePages: Record<string, FeaturePageData> = {
       },
       {
         title: "Team Collaboration",
+        image: "/images/framer/features-crm-collaboration.png",
         description:
           "Assign owners, leave notes, and share updates across teams so everyone stays aligned on customer progress. Full transparency without meetings.",
         bullets: [

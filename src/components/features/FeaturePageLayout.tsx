@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -9,6 +10,7 @@ export interface FeatureSection {
   description: string;
   bullets?: string[];
   reversed?: boolean;
+  image?: string;
 }
 
 export interface FeatureFaq {
@@ -22,6 +24,7 @@ export interface FeaturePageData {
   subtitle: string;
   ctaText?: string;
   ctaHref?: string;
+  heroImage?: string;
   sections: FeatureSection[];
   stats?: { value: string; label: string }[];
   faqs?: FeatureFaq[];
@@ -45,12 +48,14 @@ function FeatureHero({
   subtitle,
   ctaText,
   ctaHref,
+  heroImage,
 }: {
   badge: string;
   headline: string;
   subtitle: string;
   ctaText?: string;
   ctaHref?: string;
+  heroImage?: string;
 }) {
   return (
     <section className="relative overflow-hidden bg-[#0a0e1a] pt-32 pb-20 lg:pt-40 lg:pb-28">
@@ -109,6 +114,22 @@ function FeatureHero({
             Book a Demo
           </a>
         </div>
+
+        {/* Hero Image */}
+        {heroImage && (
+          <div className="mt-12 mx-auto max-w-3xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/20 border border-white/10">
+              <Image
+                src={heroImage}
+                alt={headline}
+                width={900}
+                height={560}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -151,21 +172,33 @@ function FeatureSectionBlock({
         )}
       </div>
 
-      {/* Illustration placeholder */}
+      {/* Illustration */}
       <div className="flex-1 w-full">
-        <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200/60 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50">
-                <svg className="h-7 w-7 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <path d="M3 9h18M9 21V9" />
-                </svg>
+        {section.image ? (
+          <div className="relative rounded-2xl overflow-hidden border border-gray-200/60 shadow-lg">
+            <Image
+              src={section.image}
+              alt={section.title}
+              width={600}
+              height={450}
+              className="w-full h-auto"
+            />
+          </div>
+        ) : (
+          <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200/60 overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50">
+                  <svg className="h-7 w-7 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M3 9h18M9 21V9" />
+                  </svg>
+                </div>
+                <p className="text-sm text-gray-400">{section.title}</p>
               </div>
-              <p className="text-sm text-gray-400">{section.title}</p>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
@@ -281,6 +314,7 @@ export default function FeaturePageLayout({ data }: { data: FeaturePageData }) {
         subtitle={data.subtitle}
         ctaText={data.ctaText}
         ctaHref={data.ctaHref}
+        heroImage={data.heroImage}
       />
 
       {/* Feature sections */}
